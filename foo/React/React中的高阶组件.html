@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>React中的高阶组件 | 龙鱼混杂</title>
+    <meta name="generator" content="VuePress 1.9.9">
+    <link rel="icon" href="/learn-typescript/img.png">
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/learn-typescript/assets/css/0.styles.22ff2271.css" as="style"><link rel="preload" href="/learn-typescript/assets/js/app.65022c4a.js" as="script"><link rel="preload" href="/learn-typescript/assets/js/2.f12ff90a.js" as="script"><link rel="preload" href="/learn-typescript/assets/js/93.6f8f5f23.js" as="script"><link rel="prefetch" href="/learn-typescript/assets/js/10.1443b77e.js"><link rel="prefetch" href="/learn-typescript/assets/js/100.78bc1a68.js"><link rel="prefetch" href="/learn-typescript/assets/js/101.57d4d464.js"><link rel="prefetch" href="/learn-typescript/assets/js/102.ee5c1b09.js"><link rel="prefetch" href="/learn-typescript/assets/js/103.644f5975.js"><link rel="prefetch" href="/learn-typescript/assets/js/104.4c94cea4.js"><link rel="prefetch" href="/learn-typescript/assets/js/105.1de5ecbf.js"><link rel="prefetch" href="/learn-typescript/assets/js/106.2fb80939.js"><link rel="prefetch" href="/learn-typescript/assets/js/107.c577558a.js"><link rel="prefetch" href="/learn-typescript/assets/js/108.0e962f1c.js"><link rel="prefetch" href="/learn-typescript/assets/js/109.f1c3e189.js"><link rel="prefetch" href="/learn-typescript/assets/js/11.b2f5d3c5.js"><link rel="prefetch" href="/learn-typescript/assets/js/110.f4913f61.js"><link rel="prefetch" href="/learn-typescript/assets/js/111.82a06cc6.js"><link rel="prefetch" href="/learn-typescript/assets/js/112.273febfb.js"><link rel="prefetch" href="/learn-typescript/assets/js/113.449069f5.js"><link rel="prefetch" href="/learn-typescript/assets/js/114.f4ff0187.js"><link rel="prefetch" href="/learn-typescript/assets/js/115.eccb3fbb.js"><link rel="prefetch" href="/learn-typescript/assets/js/116.de5c81b0.js"><link rel="prefetch" href="/learn-typescript/assets/js/117.a0441188.js"><link rel="prefetch" href="/learn-typescript/assets/js/118.2fb3a65b.js"><link rel="prefetch" href="/learn-typescript/assets/js/119.7e16bcc2.js"><link rel="prefetch" href="/learn-typescript/assets/js/12.959010c8.js"><link rel="prefetch" href="/learn-typescript/assets/js/120.2efb4f4b.js"><link rel="prefetch" href="/learn-typescript/assets/js/121.bafd4fc5.js"><link rel="prefetch" href="/learn-typescript/assets/js/122.e1b560eb.js"><link rel="prefetch" href="/learn-typescript/assets/js/123.74a8b8de.js"><link rel="prefetch" href="/learn-typescript/assets/js/124.82ae6c9d.js"><link rel="prefetch" href="/learn-typescript/assets/js/125.aa24a87d.js"><link rel="prefetch" href="/learn-typescript/assets/js/126.bf201686.js"><link rel="prefetch" href="/learn-typescript/assets/js/127.ae43a7f2.js"><link rel="prefetch" href="/learn-typescript/assets/js/128.d7c509b1.js"><link rel="prefetch" href="/learn-typescript/assets/js/129.d5092f04.js"><link rel="prefetch" href="/learn-typescript/assets/js/13.f6c76511.js"><link rel="prefetch" href="/learn-typescript/assets/js/130.fe01c2b4.js"><link rel="prefetch" href="/learn-typescript/assets/js/131.8038826f.js"><link rel="prefetch" href="/learn-typescript/assets/js/132.191eb80b.js"><link rel="prefetch" href="/learn-typescript/assets/js/133.83014ee0.js"><link rel="prefetch" href="/learn-typescript/assets/js/134.a54d8873.js"><link rel="prefetch" href="/learn-typescript/assets/js/135.d98ac3be.js"><link rel="prefetch" href="/learn-typescript/assets/js/136.ddfe591f.js"><link rel="prefetch" href="/learn-typescript/assets/js/137.593203f0.js"><link rel="prefetch" href="/learn-typescript/assets/js/138.ffc88360.js"><link rel="prefetch" href="/learn-typescript/assets/js/139.4a9969f8.js"><link rel="prefetch" href="/learn-typescript/assets/js/14.863785df.js"><link rel="prefetch" href="/learn-typescript/assets/js/140.02580eb9.js"><link rel="prefetch" href="/learn-typescript/assets/js/141.4512eb76.js"><link rel="prefetch" href="/learn-typescript/assets/js/142.7115e9e0.js"><link rel="prefetch" href="/learn-typescript/assets/js/143.1c91a682.js"><link rel="prefetch" href="/learn-typescript/assets/js/144.cf47c701.js"><link rel="prefetch" href="/learn-typescript/assets/js/145.28348dd4.js"><link rel="prefetch" href="/learn-typescript/assets/js/146.4188d32a.js"><link rel="prefetch" href="/learn-typescript/assets/js/147.88cfb333.js"><link rel="prefetch" href="/learn-typescript/assets/js/148.e2562fef.js"><link rel="prefetch" href="/learn-typescript/assets/js/149.17b1abaf.js"><link rel="prefetch" href="/learn-typescript/assets/js/15.6c8fcdd8.js"><link rel="prefetch" href="/learn-typescript/assets/js/150.ac375cb0.js"><link rel="prefetch" href="/learn-typescript/assets/js/151.c6131fa7.js"><link rel="prefetch" href="/learn-typescript/assets/js/152.655702ac.js"><link rel="prefetch" href="/learn-typescript/assets/js/153.b3a80b0a.js"><link rel="prefetch" href="/learn-typescript/assets/js/154.edd1bd03.js"><link rel="prefetch" href="/learn-typescript/assets/js/155.92d13ada.js"><link rel="prefetch" href="/learn-typescript/assets/js/156.189e74c9.js"><link rel="prefetch" href="/learn-typescript/assets/js/157.6429ec60.js"><link rel="prefetch" href="/learn-typescript/assets/js/158.59930e8a.js"><link rel="prefetch" href="/learn-typescript/assets/js/159.f7a46fd3.js"><link rel="prefetch" href="/learn-typescript/assets/js/16.a9935b58.js"><link rel="prefetch" href="/learn-typescript/assets/js/160.0689d2e4.js"><link rel="prefetch" href="/learn-typescript/assets/js/161.b30318c6.js"><link rel="prefetch" href="/learn-typescript/assets/js/162.6a9c9cc8.js"><link rel="prefetch" href="/learn-typescript/assets/js/17.24e9eb48.js"><link rel="prefetch" href="/learn-typescript/assets/js/18.b026b4d5.js"><link rel="prefetch" href="/learn-typescript/assets/js/19.146d253b.js"><link rel="prefetch" href="/learn-typescript/assets/js/20.7c8636e0.js"><link rel="prefetch" href="/learn-typescript/assets/js/21.b5356d48.js"><link rel="prefetch" href="/learn-typescript/assets/js/22.5bced95a.js"><link rel="prefetch" href="/learn-typescript/assets/js/23.59ed8be7.js"><link rel="prefetch" href="/learn-typescript/assets/js/24.484bc0d4.js"><link rel="prefetch" href="/learn-typescript/assets/js/25.c3fc519c.js"><link rel="prefetch" href="/learn-typescript/assets/js/26.21c4e94d.js"><link rel="prefetch" href="/learn-typescript/assets/js/27.9d936a9a.js"><link rel="prefetch" href="/learn-typescript/assets/js/28.b9b85e09.js"><link rel="prefetch" href="/learn-typescript/assets/js/29.414c6a86.js"><link rel="prefetch" href="/learn-typescript/assets/js/3.482a9e45.js"><link rel="prefetch" href="/learn-typescript/assets/js/30.cacfba7a.js"><link rel="prefetch" href="/learn-typescript/assets/js/31.db4c34dd.js"><link rel="prefetch" href="/learn-typescript/assets/js/32.f8f1bd48.js"><link rel="prefetch" href="/learn-typescript/assets/js/33.809aef7d.js"><link rel="prefetch" href="/learn-typescript/assets/js/34.b1aee38f.js"><link rel="prefetch" href="/learn-typescript/assets/js/35.711e99c8.js"><link rel="prefetch" href="/learn-typescript/assets/js/36.6aad95b5.js"><link rel="prefetch" href="/learn-typescript/assets/js/37.4463d2a5.js"><link rel="prefetch" href="/learn-typescript/assets/js/38.a1eca688.js"><link rel="prefetch" href="/learn-typescript/assets/js/39.48481131.js"><link rel="prefetch" href="/learn-typescript/assets/js/4.1b397dc3.js"><link rel="prefetch" href="/learn-typescript/assets/js/40.e4675b9f.js"><link rel="prefetch" href="/learn-typescript/assets/js/41.c0e73777.js"><link rel="prefetch" href="/learn-typescript/assets/js/42.833e8ef6.js"><link rel="prefetch" href="/learn-typescript/assets/js/43.0e33103b.js"><link rel="prefetch" href="/learn-typescript/assets/js/44.c683d78f.js"><link rel="prefetch" href="/learn-typescript/assets/js/45.103bfef5.js"><link rel="prefetch" href="/learn-typescript/assets/js/46.433c31f1.js"><link rel="prefetch" href="/learn-typescript/assets/js/47.1afe7f2c.js"><link rel="prefetch" href="/learn-typescript/assets/js/48.5d1520cc.js"><link rel="prefetch" href="/learn-typescript/assets/js/49.c438df64.js"><link rel="prefetch" href="/learn-typescript/assets/js/5.1a61208d.js"><link rel="prefetch" href="/learn-typescript/assets/js/50.766040f1.js"><link rel="prefetch" href="/learn-typescript/assets/js/51.563be823.js"><link rel="prefetch" href="/learn-typescript/assets/js/52.0b752717.js"><link rel="prefetch" href="/learn-typescript/assets/js/53.52335597.js"><link rel="prefetch" href="/learn-typescript/assets/js/54.e9d6261c.js"><link rel="prefetch" href="/learn-typescript/assets/js/55.38017fd1.js"><link rel="prefetch" href="/learn-typescript/assets/js/56.8eb374a4.js"><link rel="prefetch" href="/learn-typescript/assets/js/57.edda2a5f.js"><link rel="prefetch" href="/learn-typescript/assets/js/58.b1987896.js"><link rel="prefetch" href="/learn-typescript/assets/js/59.593eddd4.js"><link rel="prefetch" href="/learn-typescript/assets/js/6.0c507dec.js"><link rel="prefetch" href="/learn-typescript/assets/js/60.6b2adb80.js"><link rel="prefetch" href="/learn-typescript/assets/js/61.40b621a4.js"><link rel="prefetch" href="/learn-typescript/assets/js/62.4be7ed21.js"><link rel="prefetch" href="/learn-typescript/assets/js/63.b0089571.js"><link rel="prefetch" href="/learn-typescript/assets/js/64.a540cfb8.js"><link rel="prefetch" href="/learn-typescript/assets/js/65.78191260.js"><link rel="prefetch" href="/learn-typescript/assets/js/66.841abcfb.js"><link rel="prefetch" href="/learn-typescript/assets/js/67.aafdd85d.js"><link rel="prefetch" href="/learn-typescript/assets/js/68.3fe54ee8.js"><link rel="prefetch" href="/learn-typescript/assets/js/69.2ac4f4fd.js"><link rel="prefetch" href="/learn-typescript/assets/js/7.f8393b73.js"><link rel="prefetch" href="/learn-typescript/assets/js/70.1bff0658.js"><link rel="prefetch" href="/learn-typescript/assets/js/71.1259caae.js"><link rel="prefetch" href="/learn-typescript/assets/js/72.00cdf2f8.js"><link rel="prefetch" href="/learn-typescript/assets/js/73.04d8702a.js"><link rel="prefetch" href="/learn-typescript/assets/js/74.7af51070.js"><link rel="prefetch" href="/learn-typescript/assets/js/75.20025077.js"><link rel="prefetch" href="/learn-typescript/assets/js/76.baab8231.js"><link rel="prefetch" href="/learn-typescript/assets/js/77.68adaf17.js"><link rel="prefetch" href="/learn-typescript/assets/js/78.57ae309f.js"><link rel="prefetch" href="/learn-typescript/assets/js/79.6d8be3ab.js"><link rel="prefetch" href="/learn-typescript/assets/js/8.dd818469.js"><link rel="prefetch" href="/learn-typescript/assets/js/80.f3c0dfb2.js"><link rel="prefetch" href="/learn-typescript/assets/js/81.3aadf904.js"><link rel="prefetch" href="/learn-typescript/assets/js/82.0565f5d0.js"><link rel="prefetch" href="/learn-typescript/assets/js/83.826ba207.js"><link rel="prefetch" href="/learn-typescript/assets/js/84.e831c7c7.js"><link rel="prefetch" href="/learn-typescript/assets/js/85.599e29ff.js"><link rel="prefetch" href="/learn-typescript/assets/js/86.aeef5060.js"><link rel="prefetch" href="/learn-typescript/assets/js/87.ee133bc0.js"><link rel="prefetch" href="/learn-typescript/assets/js/88.b1ce3b46.js"><link rel="prefetch" href="/learn-typescript/assets/js/89.d653c693.js"><link rel="prefetch" href="/learn-typescript/assets/js/9.a596d56d.js"><link rel="prefetch" href="/learn-typescript/assets/js/90.69c3db7a.js"><link rel="prefetch" href="/learn-typescript/assets/js/91.de26b2ee.js"><link rel="prefetch" href="/learn-typescript/assets/js/92.65681e8e.js"><link rel="prefetch" href="/learn-typescript/assets/js/94.49bbf7de.js"><link rel="prefetch" href="/learn-typescript/assets/js/95.2db610ef.js"><link rel="prefetch" href="/learn-typescript/assets/js/96.ba63d16a.js"><link rel="prefetch" href="/learn-typescript/assets/js/97.221bb1c2.js"><link rel="prefetch" href="/learn-typescript/assets/js/98.43a0b8c0.js"><link rel="prefetch" href="/learn-typescript/assets/js/99.57b3d0a6.js">
+    <link rel="stylesheet" href="/learn-typescript/assets/css/0.styles.22ff2271.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/learn-typescript/" class="home-link router-link-active"><img src="https://www.logosc.cn//oss/icons/2022/09/03/9aab9c697d7125d64f828eba5b4e16c5.svg" alt="龙鱼混杂" class="logo"> <span class="site-name can-hide">龙鱼混杂</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/learn-typescript/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/learn-typescript/foo/" class="nav-link router-link-active">
+  学习路线
+</a></div><div class="nav-item"><a href="https://github.com/QHSWGS" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/learn-typescript/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/learn-typescript/foo/" class="nav-link router-link-active">
+  学习路线
+</a></div><div class="nav-item"><a href="https://github.com/QHSWGS" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>css学习路线</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>JavaScript学习路线</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>React学习路线</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/learn-typescript/foo/React/Context与Reducer.html" class="sidebar-link">Context与Reducer</a></li><li><a href="/learn-typescript/foo/React/Hooks与事件绑定.html" class="sidebar-link">Hooks与事件绑定</a></li><li><a href="/learn-typescript/foo/React/Hooks与普通函数的区别.html" class="sidebar-link">Hooks与普通函数的区别</a></li><li><a href="/learn-typescript/foo/React/Hooks中的useState.html" class="sidebar-link">Hooks中的useState</a></li><li><a href="/learn-typescript/foo/React/Mobx与Redux的异同.html" class="sidebar-link">Mobx与Redux的异同</a></li><li><a href="/learn-typescript/foo/React/ReactRouter的实现.html" class="sidebar-link">ReactRouter的实现</a></li><li><a href="/learn-typescript/foo/React/React中diff算法的理解.html" class="sidebar-link">React中diff算法的理解</a></li><li><a href="/learn-typescript/foo/React/React中JSX的理解.html" class="sidebar-link">React中JSX的理解</a></li><li><a href="/learn-typescript/foo/React/React中refs的理解.html" class="sidebar-link">React中refs的理解</a></li><li><a href="/learn-typescript/foo/React/React中的合成事件.html" class="sidebar-link">React中的合成事件</a></li><li><a href="/learn-typescript/foo/React/React中的纯组件.html" class="sidebar-link">React中的纯组件</a></li><li><a href="/learn-typescript/foo/React/React中的高阶组件.html" class="active sidebar-link">React中的高阶组件</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/learn-typescript/foo/React/React中的高阶组件.html#描述" class="sidebar-link">描述</a></li><li class="sidebar-sub-header"><a href="/learn-typescript/foo/React/React中的高阶组件.html#hoc与mixin" class="sidebar-link">HOC与Mixin</a></li><li class="sidebar-sub-header"><a href="/learn-typescript/foo/React/React中的高阶组件.html#注意" class="sidebar-link">注意</a></li><li class="sidebar-sub-header"><a href="/learn-typescript/foo/React/React中的高阶组件.html#示例" class="sidebar-link">示例</a></li><li class="sidebar-sub-header"><a href="/learn-typescript/foo/React/React中的高阶组件.html#每日一题" class="sidebar-link">每日一题</a></li><li class="sidebar-sub-header"><a href="/learn-typescript/foo/React/React中的高阶组件.html#参考" class="sidebar-link">参考</a></li></ul></li><li><a href="/learn-typescript/foo/React/React中组件间通信的方式.html" class="sidebar-link">React中组件间通信的方式</a></li><li><a href="/learn-typescript/foo/React/React生命周期.html" class="sidebar-link">React生命周期</a></li><li><a href="/learn-typescript/foo/React/React组件复用的方式.html" class="sidebar-link">React组件复用的方式</a></li><li><a href="/learn-typescript/foo/React/React组件的state和props.html" class="sidebar-link">React组件的state和props</a></li><li><a href="/learn-typescript/foo/React/React虚拟DOM的理解.html" class="sidebar-link">React虚拟DOM的理解</a></li><li><a href="/learn-typescript/foo/React/setState同步异步场景.html" class="sidebar-link">setState同步异步场景</a></li><li><a href="/learn-typescript/foo/React/useEffect与useLayoutEffect.html" class="sidebar-link">useEffect与useLayoutEffect</a></li><li><a href="/learn-typescript/foo/React/useMemo与useCallback.html" class="sidebar-link">useMemo与useCallback</a></li><li><a href="/learn-typescript/foo/React/受控组件和非受控组件.html" class="sidebar-link">受控组件和非受控组件</a></li><li><a href="/learn-typescript/foo/React/手写useState与useEffect.html" class="sidebar-link">手写useState与useEffect</a></li><li><a href="/learn-typescript/foo/React/有状态和无状态组件.html" class="sidebar-link">有状态和无状态组件</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Vue学习路线</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="react中的高阶组件"><a href="#react中的高阶组件" class="header-anchor">#</a> React中的高阶组件</h1> <p>高阶组件<code>HOC</code>即<code>Higher Order Component</code>是<code>React</code>中用于复用组件逻辑的一种高级技巧，<code>HOC</code>自身不是<code>React API</code>的一部分，它是一种基于<code>React</code>的组合特性而形成的设计模式。</p> <h2 id="描述"><a href="#描述" class="header-anchor">#</a> 描述</h2> <p>高阶组件从名字上就透漏出高级的气息，实际上这个概念应该是源自于<code>JavaScript</code>的高阶函数，高阶函数就是接受函数作为输入或者输出的函数，可以想到柯里化就是一种高阶函数，同样在<code>React</code>文档上也给出了高阶组件的定义，高阶组件是接收组件并返回新组件的函数。</p> <div class="language- extra-class"><pre class="language-text"><code>A higher-order component is a function that takes a component and returns a new component.
+</code></pre></div><p>具体而言，高阶组件是参数为组件，返回值为新组件的函数，组件是将<code>props</code>转换为<code>UI</code>，而高阶组件是将组件转换为另一个组件。<code>HOC</code>在<code>React</code>的第三方库中很常见，例如<code>Redux</code>的<code>connect</code>和<code>Relay</code>的<code>createFragmentContainer</code>。</p> <div class="language- extra-class"><pre class="language-text"><code>// 高阶组件定义
+const higherOrderComponent = (WrappedComponent) =&gt; {
+    return class EnhancedComponent extends React.Component {
+        // ...
+        render() {
+          return &lt;WrappedComponent {...this.props} /&gt;;
+        }
+  };
+}
+
+// 普通组件定义
+class WrappedComponent extends React.Component{
+    render(){
+        //....
+    }
+}
+
+// 返回被高阶组件包装过的增强组件
+const EnhancedComponent = higherOrderComponent(WrappedComponent);
+</code></pre></div><p>在这里要注意，不要试图以任何方式在<code>HOC</code>中修改组件原型，而应该使用组合的方式，通过将组件包装在容器组件中实现功能。通常情况下，实现高阶组件的方式有以下两种:</p> <ul><li>属性代理<code>Props Proxy</code>。</li> <li>反向继承<code>Inheritance Inversion</code>。</li></ul> <h3 id="属性代理"><a href="#属性代理" class="header-anchor">#</a> 属性代理</h3> <p>例如我们可以为传入的组件增加一个存储中的<code>id</code>属性值，通过高阶组件我们就可以为这个组件新增一个<code>props</code>，当然我们也可以对在<code>JSX</code>中的<code>WrappedComponent</code>组件中<code>props</code>进行操作，注意不是操作传入的<code>WrappedComponent</code>类，我们不应该直接修改传入的组件，而可以在组合的过程中对其操作。</p> <div class="language- extra-class"><pre class="language-text"><code>const HOC = (WrappedComponent, store) =&gt; {
+    return class EnhancedComponent extends React.Component {
+        render() {
+            const newProps = {
+                id: store.id
+            }
+            return &lt;WrappedComponent
+                {...this.props}
+                {...newProps}
+            /&gt;;
+        }
+    }
+}
+</code></pre></div><p>我们也可以利用高阶组件将新组件的状态装入到被包装组件中，例如我们可以使用高阶组件将非受控组件转化为受控组件。</p> <div class="language- extra-class"><pre class="language-text"><code>class WrappedComponent extends React.Component {
+    render() {
+        return &lt;input name=&quot;name&quot; /&gt;;
+    }
+}
+
+const HOC = (WrappedComponent) =&gt; {
+    return class EnhancedComponent extends React.Component {
+        constructor(props) {
+            super(props);
+            this.state = { name: &quot;&quot; };
+        }
+        render() {
+            const newProps = {
+                value: this.state.name,
+                onChange: e =&gt; this.setState({name: e.target.value}),
+            }
+            return &lt;WrappedComponent 
+                {...this.props} 
+                {...newProps} 
+            /&gt;;
+        }
+    }
+}
+</code></pre></div><p>或者我们的目的是将其使用其他组件包裹起来用以达成布局或者是样式的目的。</p> <div class="language- extra-class"><pre class="language-text"><code>const HOC = (WrappedComponent) =&gt; {
+    return class EnhancedComponent extends React.Component {
+        render() {
+            return (
+                &lt;div class=&quot;layout&quot;&gt;
+                    &lt;WrappedComponent  {...this.props} /&gt;
+                &lt;/div&gt;
+            );
+        }
+    }
+}
+</code></pre></div><h3 id="反向继承"><a href="#反向继承" class="header-anchor">#</a> 反向继承</h3> <p>反向继承是指返回的组件去继承之前的组件，在反向继承中我们可以做非常多的操作，修改<code>state</code>、<code>props</code>甚至是翻转<code>Element Tree</code>，反向继承有一个重要的点，反向继承不能保证完整的子组件树被解析，也就是说解析的元素树中包含了组件(函数类型或者<code>Class</code>类型)，就不能再操作组件的子组件了。<br>
+当我们使用反向继承实现高阶组件的时候可以通过渲染劫持来控制渲染，具体是指我们可以有意识地控制<code>WrappedComponent</code>的渲染过程，从而控制渲染控制的结果，例如我们可以根据部分参数去决定是否渲染组件。</p> <div class="language- extra-class"><pre class="language-text"><code>const HOC = (WrappedComponent) =&gt; {
+    return class EnhancedComponent extends WrappedComponent {
+        render() {
+            return this.props.isRender &amp;&amp; super.render();  
+        }
+    }
+}
+</code></pre></div><p>甚至我们可以通过重写的方式劫持原组件的生命周期。</p> <div class="language- extra-class"><pre class="language-text"><code>const HOC = (WrappedComponent) =&gt; {
+    return class EnhancedComponent extends WrappedComponent {
+        componentDidMount(){
+          // ...
+        }
+        render() {
+            return super.render();  
+        }
+    }
+}
+</code></pre></div><p>由于实际上是继承关系，我们可以去读取组件的<code>props</code>和<code>state</code>，如果有必要的话，甚至可以修改增加、修改和删除<code>props</code>和<code>state</code>，当然前提是修改带来的风险需要你自己来控制。在一些情况下，我们可能需要为高阶属性传入一些参数，那我们就可以通过柯里化的形式传入参数，配合高阶组件可以完成对组件的类似于闭包的操作。</p> <div class="language- extra-class"><pre class="language-text"><code>const HOCFactoryFactory = (params) =&gt; {
+    // 此处操作params
+    return (WrappedComponent) =&gt; {
+        return class EnhancedComponent extends WrappedComponent {
+            render() {
+                return params.isRender &amp;&amp; this.props.isRender &amp;&amp; super.render();
+            }
+        }
+    }
+}
+</code></pre></div><h2 id="hoc与mixin"><a href="#hoc与mixin" class="header-anchor">#</a> HOC与Mixin</h2> <p>使用<code>Mixin</code>与<code>HOC</code>都可以用于解决横切关注点相关的问题。<br> <code>Mixin</code>是一种混入的模式，在实际使用中<code>Mixin</code>的作用还是非常强大的，能够使得我们在多个组件中共用相同的方法，但同样也会给组件不断增加新的方法和属性，组件本身不仅可以感知，甚至需要做相关的处理(例如命名冲突、状态维护等)，一旦混入的模块变多时，整个组件就变的难以维护，<code>Mixin</code>可能会引入不可见的属性，例如在渲染组件中使用<code>Mixin</code>方法，给组件带来了不可见的属性<code>props</code>和状态<code>state</code>，并且<code>Mixin</code>可能会相互依赖，相互耦合，不利于代码维护，此外不同的<code>Mixin</code>中的方法可能会相互冲突。之前<code>React</code>官方建议使用<code>Mixin</code>用于解决横切关注点相关的问题，但由于使用<code>Mixin</code>可能会产生更多麻烦，所以官方现在推荐使用<code>HOC</code>。<br>
+高阶组件<code>HOC</code>属于函数式编程<code>functional programming</code>思想，对于被包裹的组件时不会感知到高阶组件的存在，而高阶组件返回的组件会在原来的组件之上具有功能增强的效果，基于此<code>React</code>官方推荐使用高阶组件。</p> <h2 id="注意"><a href="#注意" class="header-anchor">#</a> 注意</h2> <h3 id="不要改变原始组件"><a href="#不要改变原始组件" class="header-anchor">#</a> 不要改变原始组件</h3> <p>不要试图在<code>HOC</code>中修改组件原型，或以其他方式改变它。</p> <div class="language- extra-class"><pre class="language-text"><code>function logProps(InputComponent) {
+  InputComponent.prototype.componentDidUpdate = function(prevProps) {
+    console.log(&quot;Current props: &quot;, this.props);
+    console.log(&quot;Previous props: &quot;, prevProps);
+  };
+  // 返回原始的 input 组件，其已经被修改。
+  return InputComponent;
+}
+
+// 每次调用 logProps 时，增强组件都会有 log 输出。
+const EnhancedComponent = logProps(InputComponent);
+</code></pre></div><p>这样做会产生一些不良后果，其一是输入组件再也无法像<code>HOC</code>增强之前那样使用了，更严重的是，如果你再用另一个同样会修改<code>componentDidUpdate</code>的<code>HOC</code>增强它，那么前面的<code>HOC</code>就会失效，同时这个<code>HOC</code>也无法应用于没有生命周期的函数组件。<br>
+修改传入组件的<code>HOC</code>是一种糟糕的抽象方式，调用者必须知道他们是如何实现的，以避免与其他<code>HOC</code>发生冲突。<code>HOC</code>不应该修改传入组件，而应该使用组合的方式，通过将组件包装在容器组件中实现功能。</p> <div class="language- extra-class"><pre class="language-text"><code>function logProps(WrappedComponent) {
+  return class extends React.Component {
+    componentDidUpdate(prevProps) {
+      console.log(&quot;Current props: &quot;, this.props);
+      console.log(&quot;Previous props: &quot;, prevProps);
+    }
+    render() {
+      // 将 input 组件包装在容器中，而不对其进行修改，Nice!
+      return &lt;WrappedComponent {...this.props} /&gt;;
+    }
+  }
+}
+</code></pre></div><h3 id="过滤props"><a href="#过滤props" class="header-anchor">#</a> 过滤props</h3> <p><code>HOC</code>为组件添加特性，自身不应该大幅改变约定，<code>HOC</code>返回的组件与原组件应保持类似的接口。<code>HOC</code>应该透传与自身无关的<code>props</code>，大多数<code>HOC</code>都应该包含一个类似于下面的<code>render</code>方法。</p> <div class="language- extra-class"><pre class="language-text"><code>render() {
+  // 过滤掉额外的 props，且不要进行透传
+  const { extraProp, ...passThroughProps } = this.props;
+
+  // 将 props 注入到被包装的组件中。
+  // 通常为 state 的值或者实例方法。
+  const injectedProp = someStateOrInstanceMethod;
+
+  // 将 props 传递给被包装组件
+  return (
+    &lt;WrappedComponent
+      injectedProp={injectedProp}
+      {...passThroughProps}
+    /&gt;
+  );
+}
+</code></pre></div><h3 id="最大化可组合性"><a href="#最大化可组合性" class="header-anchor">#</a> 最大化可组合性</h3> <p>并不是所有的<code>HOC</code>都一样，有时候它仅接受一个参数，也就是被包裹的组件。</p> <div class="language- extra-class"><pre class="language-text"><code>const NavbarWithRouter = withRouter(Navbar);
+</code></pre></div><p><code>HOC</code>通常可以接收多个参数，比如在<code>Relay</code>中<code>HOC</code>额外接收了一个配置对象用于指定组件的数据依赖。</p> <div class="language- extra-class"><pre class="language-text"><code>const CommentWithRelay = Relay.createContainer(Comment, config);
+</code></pre></div><p>最常见的<code>HOC</code>签名如下，<code>connect</code>是一个返回高阶组件的高阶函数。</p> <div class="language- extra-class"><pre class="language-text"><code>// React Redux 的 `connect` 函数
+const ConnectedComment = connect(commentSelector, commentActions)(CommentList);
+
+// connect 是一个函数，它的返回值为另外一个函数。
+const enhance = connect(commentListSelector, commentListActions);
+// 返回值为 HOC，它会返回已经连接 Redux store 的组件
+const ConnectedComment = enhance(CommentList);
+</code></pre></div><p>这种形式可能看起来令人困惑或不必要，但它有一个有用的属性，像<code>connect</code>函数返回的单参数<code>HOC</code>具有签名<code>Component =&gt; Component</code>，输出类型与输入类型相同的函数很容易组合在一起。同样的属性也允许<code>connect</code>和其他<code>HOC</code>承担装饰器的角色。此外许多第三方库都提供了<code>compose</code>工具函数，包括<code>lodash</code>、<code>Redux</code>和<code>Ramda</code>。</p> <div class="language- extra-class"><pre class="language-text"><code>const EnhancedComponent = withRouter(connect(commentSelector)(WrappedComponent))
+
+// 你可以编写组合工具函数
+// compose(f, g, h) 等同于 (...args) =&gt; f(g(h(...args)))
+const enhance = compose(
+  // 这些都是单参数的 HOC
+  withRouter,
+  connect(commentSelector)
+)
+const EnhancedComponent = enhance(WrappedComponent)
+</code></pre></div><h3 id="不要在render方法中使用hoc"><a href="#不要在render方法中使用hoc" class="header-anchor">#</a> 不要在render方法中使用HOC</h3> <p><code>React</code>的<code>diff</code>算法使用组件标识来确定它是应该更新现有子树还是将其丢弃并挂载新子树，如果从<code>render</code>返回的组件与前一个渲染中的组件相同<code>===</code>，则<code>React</code>通过将子树与新子树进行区分来递归更新子树，如果它们不相等，则完全卸载前一个子树。<br>
+通常在使用的时候不需要考虑这点，但对<code>HOC</code>来说这一点很重要，因为这代表着你不应在组件的<code>render</code>方法中对一个组件应用<code>HOC</code>。</p> <div class="language- extra-class"><pre class="language-text"><code>render() {
+  // 每次调用 render 函数都会创建一个新的 EnhancedComponent
+  // EnhancedComponent1 !== EnhancedComponent2
+  const EnhancedComponent = enhance(MyComponent);
+  // 这将导致子树每次渲染都会进行卸载，和重新挂载的操作！
+  return &lt;EnhancedComponent /&gt;;
+}
+</code></pre></div><p>这不仅仅是性能问题，重新挂载组件会导致该组件及其所有子组件的状态丢失，如果在组件之外创建<code>HOC</code>，这样一来组件只会创建一次。因此每次<code>render</code>时都会是同一个组件，一般来说，这跟你的预期表现是一致的。在极少数情况下，你需要动态调用<code>HOC</code>，你可以在组件的生命周期方法或其构造函数中进行调用。</p> <h3 id="务必复制静态方法"><a href="#务必复制静态方法" class="header-anchor">#</a> 务必复制静态方法</h3> <p>有时在<code>React</code>组件上定义静态方法很有用，例如<code>Relay</code>容器暴露了一个静态方法<code>getFragment</code>以方便组合<code>GraphQL</code>片段。但是当你将<code>HOC</code>应用于组件时，原始组件将使用容器组件进行包装，这意味着新组件没有原始组件的任何静态方法。</p> <div class="language- extra-class"><pre class="language-text"><code>// 定义静态函数
+WrappedComponent.staticMethod = function() {/*...*/}
+// 现在使用 HOC
+const EnhancedComponent = enhance(WrappedComponent);
+
+// 增强组件没有 staticMethod
+typeof EnhancedComponent.staticMethod === &quot;undefined&quot; // true
+</code></pre></div><p>为了解决这个问题，你可以在返回之前把这些方法拷贝到容器组件上。</p> <div class="language- extra-class"><pre class="language-text"><code>function enhance(WrappedComponent) {
+  class Enhance extends React.Component {/*...*/}
+  // 必须准确知道应该拷贝哪些方法 :(
+  Enhance.staticMethod = WrappedComponent.staticMethod;
+  return Enhance;
+}
+</code></pre></div><p>但要这样做，你需要知道哪些方法应该被拷贝，你可以使用<code>hoist-non-react-statics</code>依赖自动拷贝所有非<code>React</code>静态方法。</p> <div class="language- extra-class"><pre class="language-text"><code>import hoistNonReactStatic from &quot;hoist-non-react-statics&quot;;
+function enhance(WrappedComponent) {
+  class Enhance extends React.Component {/*...*/}
+  hoistNonReactStatic(Enhance, WrappedComponent);
+  return Enhance;
+}
+</code></pre></div><p>除了导出组件，另一个可行的方案是再额外导出这个静态方法。</p> <div class="language- extra-class"><pre class="language-text"><code>// 使用这种方式代替...
+MyComponent.someFunction = someFunction;
+export default MyComponent;
+
+// ...单独导出该方法...
+export { someFunction };
+
+// ...并在要使用的组件中，import 它们
+import MyComponent, { someFunction } from &quot;./MyComponent.js&quot;;
+</code></pre></div><h3 id="refs不会被传递"><a href="#refs不会被传递" class="header-anchor">#</a> Refs不会被传递</h3> <p>虽然高阶组件的约定是将所有<code>props</code>传递给被包装组件，但这对于<code>refs</code>并不适用，那是因为<code>ref</code>实际上并不是一个<code>prop</code>，就像<code>key</code>一样，它是由<code>React</code>专门处理的。如果将<code>ref</code>添加到<code>HOC</code>的返回组件中，则<code>ref</code>引用指向容器组件，而不是被包装组件，这个问题可以通过<code>React.forwardRef</code>这个<code>API</code>明确地将<code>refs</code>转发到内部的组件。。</p> <div class="language- extra-class"><pre class="language-text"><code>function logProps(Component) {
+  class LogProps extends React.Component {
+    componentDidUpdate(prevProps) {
+      console.log('old props:', prevProps);
+      console.log('new props:', this.props);
+    }
+
+    render() {
+      const {forwardedRef, ...rest} = this.props;
+
+      // 将自定义的 prop 属性 “forwardedRef” 定义为 ref
+      return &lt;Component ref={forwardedRef} {...rest} /&gt;;
+    }
+  }
+
+  // 注意 React.forwardRef 回调的第二个参数 “ref”。
+  // 我们可以将其作为常规 prop 属性传递给 LogProps，例如 “forwardedRef”
+  // 然后它就可以被挂载到被 LogProps 包裹的子组件上。
+  return React.forwardRef((props, ref) =&gt; {
+    return &lt;LogProps {...props} forwardedRef={ref} /&gt;;
+  });
+}
+</code></pre></div><h2 id="示例"><a href="#示例" class="header-anchor">#</a> 示例</h2> <div class="language- extra-class"><pre class="language-text"><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot; /&gt;
+    &lt;title&gt;React&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div id=&quot;root&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;script src=&quot;https://unpkg.com/react@17/umd/react.development.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://unpkg.com/react-dom@17/umd/react-dom.development.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://unpkg.com/@babel/standalone/babel.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/babel&quot;&gt;
+    class WrappedComponent extends React.Component {
+        render() {
+            return &lt;input name=&quot;name&quot; /&gt;;
+        }
+    }
+
+    const HOC = (WrappedComponent) =&gt; {
+        return class EnhancedComponent extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = { name: &quot;&quot; };
+            }
+            render() {
+                const newProps = {
+                    value: this.state.name,
+                    onChange: e =&gt; this.setState({name: e.target.value}),
+                }
+                return &lt;WrappedComponent 
+                    {...this.props} 
+                    {...newProps} 
+                /&gt;;
+            }
+        }
+    }
+
+    const EnhancedComponent = HOC(WrappedComponent);
+
+    const HOC2 = (WrappedComponent) =&gt; {
+        return class EnhancedComponent extends WrappedComponent {
+            render() {
+                return this.props.isRender &amp;&amp; super.render();  
+            }
+        }
+    }
+
+    const EnhancedComponent2 = HOC2(WrappedComponent);
+
+    var vm = ReactDOM.render(
+        &lt;&gt;
+            &lt;EnhancedComponent /&gt;
+            &lt;EnhancedComponent2 isRender={true} /&gt;
+        &lt;/&gt;,
+        document.getElementById(&quot;root&quot;)
+    );
+&lt;/script&gt;
+
+&lt;/html&gt;
+</code></pre></div><h2 id="每日一题"><a href="#每日一题" class="header-anchor">#</a> 每日一题</h2> <div class="language- extra-class"><pre class="language-text"><code>https://github.com/WindrunnerMax/EveryDay
+</code></pre></div><h2 id="参考"><a href="#参考" class="header-anchor">#</a> 参考</h2> <div class="language- extra-class"><pre class="language-text"><code>https://juejin.cn/post/6844903477798256647
+https://juejin.cn/post/6844904050236850184
+https://zh-hans.reactjs.org/docs/higher-order-components.htm
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/learn-typescript/foo/React/React中的纯组件.html" class="prev">
+        React中的纯组件
+      </a></span> <span class="next"><a href="/learn-typescript/foo/React/React中组件间通信的方式.html">
+        React中组件间通信的方式
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/learn-typescript/assets/js/app.65022c4a.js" defer></script><script src="/learn-typescript/assets/js/2.f12ff90a.js" defer></script><script src="/learn-typescript/assets/js/93.6f8f5f23.js" defer></script>
+  </body>
+</html>

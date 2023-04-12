@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>React组件的state和props | 龙鱼混杂</title>
+    <meta name="generator" content="VuePress 1.9.9">
+    <link rel="icon" href="/learn-typescript/img.png">
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/learn-typescript/assets/css/0.styles.22ff2271.css" as="style"><link rel="preload" href="/learn-typescript/assets/js/app.65022c4a.js" as="script"><link rel="preload" href="/learn-typescript/assets/js/2.f12ff90a.js" as="script"><link rel="preload" href="/learn-typescript/assets/js/97.221bb1c2.js" as="script"><link rel="prefetch" href="/learn-typescript/assets/js/10.1443b77e.js"><link rel="prefetch" href="/learn-typescript/assets/js/100.78bc1a68.js"><link rel="prefetch" href="/learn-typescript/assets/js/101.57d4d464.js"><link rel="prefetch" href="/learn-typescript/assets/js/102.ee5c1b09.js"><link rel="prefetch" href="/learn-typescript/assets/js/103.644f5975.js"><link rel="prefetch" href="/learn-typescript/assets/js/104.4c94cea4.js"><link rel="prefetch" href="/learn-typescript/assets/js/105.1de5ecbf.js"><link rel="prefetch" href="/learn-typescript/assets/js/106.2fb80939.js"><link rel="prefetch" href="/learn-typescript/assets/js/107.c577558a.js"><link rel="prefetch" href="/learn-typescript/assets/js/108.0e962f1c.js"><link rel="prefetch" href="/learn-typescript/assets/js/109.f1c3e189.js"><link rel="prefetch" href="/learn-typescript/assets/js/11.b2f5d3c5.js"><link rel="prefetch" href="/learn-typescript/assets/js/110.f4913f61.js"><link rel="prefetch" href="/learn-typescript/assets/js/111.82a06cc6.js"><link rel="prefetch" href="/learn-typescript/assets/js/112.273febfb.js"><link rel="prefetch" href="/learn-typescript/assets/js/113.449069f5.js"><link rel="prefetch" href="/learn-typescript/assets/js/114.f4ff0187.js"><link rel="prefetch" href="/learn-typescript/assets/js/115.eccb3fbb.js"><link rel="prefetch" href="/learn-typescript/assets/js/116.de5c81b0.js"><link rel="prefetch" href="/learn-typescript/assets/js/117.a0441188.js"><link rel="prefetch" href="/learn-typescript/assets/js/118.2fb3a65b.js"><link rel="prefetch" href="/learn-typescript/assets/js/119.7e16bcc2.js"><link rel="prefetch" href="/learn-typescript/assets/js/12.959010c8.js"><link rel="prefetch" href="/learn-typescript/assets/js/120.2efb4f4b.js"><link rel="prefetch" href="/learn-typescript/assets/js/121.bafd4fc5.js"><link rel="prefetch" href="/learn-typescript/assets/js/122.e1b560eb.js"><link rel="prefetch" href="/learn-typescript/assets/js/123.74a8b8de.js"><link rel="prefetch" href="/learn-typescript/assets/js/124.82ae6c9d.js"><link rel="prefetch" href="/learn-typescript/assets/js/125.aa24a87d.js"><link rel="prefetch" href="/learn-typescript/assets/js/126.bf201686.js"><link rel="prefetch" href="/learn-typescript/assets/js/127.ae43a7f2.js"><link rel="prefetch" href="/learn-typescript/assets/js/128.d7c509b1.js"><link rel="prefetch" href="/learn-typescript/assets/js/129.d5092f04.js"><link rel="prefetch" href="/learn-typescript/assets/js/13.f6c76511.js"><link rel="prefetch" href="/learn-typescript/assets/js/130.fe01c2b4.js"><link rel="prefetch" href="/learn-typescript/assets/js/131.8038826f.js"><link rel="prefetch" href="/learn-typescript/assets/js/132.191eb80b.js"><link rel="prefetch" href="/learn-typescript/assets/js/133.83014ee0.js"><link rel="prefetch" href="/learn-typescript/assets/js/134.a54d8873.js"><link rel="prefetch" href="/learn-typescript/assets/js/135.d98ac3be.js"><link rel="prefetch" href="/learn-typescript/assets/js/136.ddfe591f.js"><link rel="prefetch" href="/learn-typescript/assets/js/137.593203f0.js"><link rel="prefetch" href="/learn-typescript/assets/js/138.ffc88360.js"><link rel="prefetch" href="/learn-typescript/assets/js/139.4a9969f8.js"><link rel="prefetch" href="/learn-typescript/assets/js/14.863785df.js"><link rel="prefetch" href="/learn-typescript/assets/js/140.02580eb9.js"><link rel="prefetch" href="/learn-typescript/assets/js/141.4512eb76.js"><link rel="prefetch" href="/learn-typescript/assets/js/142.7115e9e0.js"><link rel="prefetch" href="/learn-typescript/assets/js/143.1c91a682.js"><link rel="prefetch" href="/learn-typescript/assets/js/144.cf47c701.js"><link rel="prefetch" href="/learn-typescript/assets/js/145.28348dd4.js"><link rel="prefetch" href="/learn-typescript/assets/js/146.4188d32a.js"><link rel="prefetch" href="/learn-typescript/assets/js/147.88cfb333.js"><link rel="prefetch" href="/learn-typescript/assets/js/148.e2562fef.js"><link rel="prefetch" href="/learn-typescript/assets/js/149.17b1abaf.js"><link rel="prefetch" href="/learn-typescript/assets/js/15.6c8fcdd8.js"><link rel="prefetch" href="/learn-typescript/assets/js/150.ac375cb0.js"><link rel="prefetch" href="/learn-typescript/assets/js/151.c6131fa7.js"><link rel="prefetch" href="/learn-typescript/assets/js/152.655702ac.js"><link rel="prefetch" href="/learn-typescript/assets/js/153.b3a80b0a.js"><link rel="prefetch" href="/learn-typescript/assets/js/154.edd1bd03.js"><link rel="prefetch" href="/learn-typescript/assets/js/155.92d13ada.js"><link rel="prefetch" href="/learn-typescript/assets/js/156.189e74c9.js"><link rel="prefetch" href="/learn-typescript/assets/js/157.6429ec60.js"><link rel="prefetch" href="/learn-typescript/assets/js/158.59930e8a.js"><link rel="prefetch" href="/learn-typescript/assets/js/159.f7a46fd3.js"><link rel="prefetch" href="/learn-typescript/assets/js/16.a9935b58.js"><link rel="prefetch" href="/learn-typescript/assets/js/160.0689d2e4.js"><link rel="prefetch" href="/learn-typescript/assets/js/161.b30318c6.js"><link rel="prefetch" href="/learn-typescript/assets/js/162.6a9c9cc8.js"><link rel="prefetch" href="/learn-typescript/assets/js/17.24e9eb48.js"><link rel="prefetch" href="/learn-typescript/assets/js/18.b026b4d5.js"><link rel="prefetch" href="/learn-typescript/assets/js/19.146d253b.js"><link rel="prefetch" href="/learn-typescript/assets/js/20.7c8636e0.js"><link rel="prefetch" href="/learn-typescript/assets/js/21.b5356d48.js"><link rel="prefetch" href="/learn-typescript/assets/js/22.5bced95a.js"><link rel="prefetch" href="/learn-typescript/assets/js/23.59ed8be7.js"><link rel="prefetch" href="/learn-typescript/assets/js/24.484bc0d4.js"><link rel="prefetch" href="/learn-typescript/assets/js/25.c3fc519c.js"><link rel="prefetch" href="/learn-typescript/assets/js/26.21c4e94d.js"><link rel="prefetch" href="/learn-typescript/assets/js/27.9d936a9a.js"><link rel="prefetch" href="/learn-typescript/assets/js/28.b9b85e09.js"><link rel="prefetch" href="/learn-typescript/assets/js/29.414c6a86.js"><link rel="prefetch" href="/learn-typescript/assets/js/3.482a9e45.js"><link rel="prefetch" href="/learn-typescript/assets/js/30.cacfba7a.js"><link rel="prefetch" href="/learn-typescript/assets/js/31.db4c34dd.js"><link rel="prefetch" href="/learn-typescript/assets/js/32.f8f1bd48.js"><link rel="prefetch" href="/learn-typescript/assets/js/33.809aef7d.js"><link rel="prefetch" href="/learn-typescript/assets/js/34.b1aee38f.js"><link rel="prefetch" href="/learn-typescript/assets/js/35.711e99c8.js"><link rel="prefetch" href="/learn-typescript/assets/js/36.6aad95b5.js"><link rel="prefetch" href="/learn-typescript/assets/js/37.4463d2a5.js"><link rel="prefetch" href="/learn-typescript/assets/js/38.a1eca688.js"><link rel="prefetch" href="/learn-typescript/assets/js/39.48481131.js"><link rel="prefetch" href="/learn-typescript/assets/js/4.1b397dc3.js"><link rel="prefetch" href="/learn-typescript/assets/js/40.e4675b9f.js"><link rel="prefetch" href="/learn-typescript/assets/js/41.c0e73777.js"><link rel="prefetch" href="/learn-typescript/assets/js/42.833e8ef6.js"><link rel="prefetch" href="/learn-typescript/assets/js/43.0e33103b.js"><link rel="prefetch" href="/learn-typescript/assets/js/44.c683d78f.js"><link rel="prefetch" href="/learn-typescript/assets/js/45.103bfef5.js"><link rel="prefetch" href="/learn-typescript/assets/js/46.433c31f1.js"><link rel="prefetch" href="/learn-typescript/assets/js/47.1afe7f2c.js"><link rel="prefetch" href="/learn-typescript/assets/js/48.5d1520cc.js"><link rel="prefetch" href="/learn-typescript/assets/js/49.c438df64.js"><link rel="prefetch" href="/learn-typescript/assets/js/5.1a61208d.js"><link rel="prefetch" href="/learn-typescript/assets/js/50.766040f1.js"><link rel="prefetch" href="/learn-typescript/assets/js/51.563be823.js"><link rel="prefetch" href="/learn-typescript/assets/js/52.0b752717.js"><link rel="prefetch" href="/learn-typescript/assets/js/53.52335597.js"><link rel="prefetch" href="/learn-typescript/assets/js/54.e9d6261c.js"><link rel="prefetch" href="/learn-typescript/assets/js/55.38017fd1.js"><link rel="prefetch" href="/learn-typescript/assets/js/56.8eb374a4.js"><link rel="prefetch" href="/learn-typescript/assets/js/57.edda2a5f.js"><link rel="prefetch" href="/learn-typescript/assets/js/58.b1987896.js"><link rel="prefetch" href="/learn-typescript/assets/js/59.593eddd4.js"><link rel="prefetch" href="/learn-typescript/assets/js/6.0c507dec.js"><link rel="prefetch" href="/learn-typescript/assets/js/60.6b2adb80.js"><link rel="prefetch" href="/learn-typescript/assets/js/61.40b621a4.js"><link rel="prefetch" href="/learn-typescript/assets/js/62.4be7ed21.js"><link rel="prefetch" href="/learn-typescript/assets/js/63.b0089571.js"><link rel="prefetch" href="/learn-typescript/assets/js/64.a540cfb8.js"><link rel="prefetch" href="/learn-typescript/assets/js/65.78191260.js"><link rel="prefetch" href="/learn-typescript/assets/js/66.841abcfb.js"><link rel="prefetch" href="/learn-typescript/assets/js/67.aafdd85d.js"><link rel="prefetch" href="/learn-typescript/assets/js/68.3fe54ee8.js"><link rel="prefetch" href="/learn-typescript/assets/js/69.2ac4f4fd.js"><link rel="prefetch" href="/learn-typescript/assets/js/7.f8393b73.js"><link rel="prefetch" href="/learn-typescript/assets/js/70.1bff0658.js"><link rel="prefetch" href="/learn-typescript/assets/js/71.1259caae.js"><link rel="prefetch" href="/learn-typescript/assets/js/72.00cdf2f8.js"><link rel="prefetch" href="/learn-typescript/assets/js/73.04d8702a.js"><link rel="prefetch" href="/learn-typescript/assets/js/74.7af51070.js"><link rel="prefetch" href="/learn-typescript/assets/js/75.20025077.js"><link rel="prefetch" href="/learn-typescript/assets/js/76.baab8231.js"><link rel="prefetch" href="/learn-typescript/assets/js/77.68adaf17.js"><link rel="prefetch" href="/learn-typescript/assets/js/78.57ae309f.js"><link rel="prefetch" href="/learn-typescript/assets/js/79.6d8be3ab.js"><link rel="prefetch" href="/learn-typescript/assets/js/8.dd818469.js"><link rel="prefetch" href="/learn-typescript/assets/js/80.f3c0dfb2.js"><link rel="prefetch" href="/learn-typescript/assets/js/81.3aadf904.js"><link rel="prefetch" href="/learn-typescript/assets/js/82.0565f5d0.js"><link rel="prefetch" href="/learn-typescript/assets/js/83.826ba207.js"><link rel="prefetch" href="/learn-typescript/assets/js/84.e831c7c7.js"><link rel="prefetch" href="/learn-typescript/assets/js/85.599e29ff.js"><link rel="prefetch" href="/learn-typescript/assets/js/86.aeef5060.js"><link rel="prefetch" href="/learn-typescript/assets/js/87.ee133bc0.js"><link rel="prefetch" href="/learn-typescript/assets/js/88.b1ce3b46.js"><link rel="prefetch" href="/learn-typescript/assets/js/89.d653c693.js"><link rel="prefetch" href="/learn-typescript/assets/js/9.a596d56d.js"><link rel="prefetch" href="/learn-typescript/assets/js/90.69c3db7a.js"><link rel="prefetch" href="/learn-typescript/assets/js/91.de26b2ee.js"><link rel="prefetch" href="/learn-typescript/assets/js/92.65681e8e.js"><link rel="prefetch" href="/learn-typescript/assets/js/93.6f8f5f23.js"><link rel="prefetch" href="/learn-typescript/assets/js/94.49bbf7de.js"><link rel="prefetch" href="/learn-typescript/assets/js/95.2db610ef.js"><link rel="prefetch" href="/learn-typescript/assets/js/96.ba63d16a.js"><link rel="prefetch" href="/learn-typescript/assets/js/98.43a0b8c0.js"><link rel="prefetch" href="/learn-typescript/assets/js/99.57b3d0a6.js">
+    <link rel="stylesheet" href="/learn-typescript/assets/css/0.styles.22ff2271.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/learn-typescript/" class="home-link router-link-active"><img src="https://www.logosc.cn//oss/icons/2022/09/03/9aab9c697d7125d64f828eba5b4e16c5.svg" alt="龙鱼混杂" class="logo"> <span class="site-name can-hide">龙鱼混杂</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/learn-typescript/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/learn-typescript/foo/" class="nav-link router-link-active">
+  学习路线
+</a></div><div class="nav-item"><a href="https://github.com/QHSWGS" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/learn-typescript/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/learn-typescript/foo/" class="nav-link router-link-active">
+  学习路线
+</a></div><div class="nav-item"><a href="https://github.com/QHSWGS" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>css学习路线</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>JavaScript学习路线</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>React学习路线</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/learn-typescript/foo/React/Context与Reducer.html" class="sidebar-link">Context与Reducer</a></li><li><a href="/learn-typescript/foo/React/Hooks与事件绑定.html" class="sidebar-link">Hooks与事件绑定</a></li><li><a href="/learn-typescript/foo/React/Hooks与普通函数的区别.html" class="sidebar-link">Hooks与普通函数的区别</a></li><li><a href="/learn-typescript/foo/React/Hooks中的useState.html" class="sidebar-link">Hooks中的useState</a></li><li><a href="/learn-typescript/foo/React/Mobx与Redux的异同.html" class="sidebar-link">Mobx与Redux的异同</a></li><li><a href="/learn-typescript/foo/React/ReactRouter的实现.html" class="sidebar-link">ReactRouter的实现</a></li><li><a href="/learn-typescript/foo/React/React中diff算法的理解.html" class="sidebar-link">React中diff算法的理解</a></li><li><a href="/learn-typescript/foo/React/React中JSX的理解.html" class="sidebar-link">React中JSX的理解</a></li><li><a href="/learn-typescript/foo/React/React中refs的理解.html" class="sidebar-link">React中refs的理解</a></li><li><a href="/learn-typescript/foo/React/React中的合成事件.html" class="sidebar-link">React中的合成事件</a></li><li><a href="/learn-typescript/foo/React/React中的纯组件.html" class="sidebar-link">React中的纯组件</a></li><li><a href="/learn-typescript/foo/React/React中的高阶组件.html" class="sidebar-link">React中的高阶组件</a></li><li><a href="/learn-typescript/foo/React/React中组件间通信的方式.html" class="sidebar-link">React中组件间通信的方式</a></li><li><a href="/learn-typescript/foo/React/React生命周期.html" class="sidebar-link">React生命周期</a></li><li><a href="/learn-typescript/foo/React/React组件复用的方式.html" class="sidebar-link">React组件复用的方式</a></li><li><a href="/learn-typescript/foo/React/React组件的state和props.html" class="active sidebar-link">React组件的state和props</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/learn-typescript/foo/React/React组件的state和props.html#描述" class="sidebar-link">描述</a></li><li class="sidebar-sub-header"><a href="/learn-typescript/foo/React/React组件的state和props.html#props" class="sidebar-link">props</a></li><li class="sidebar-sub-header"><a href="/learn-typescript/foo/React/React组件的state和props.html#state" class="sidebar-link">state</a></li><li class="sidebar-sub-header"><a href="/learn-typescript/foo/React/React组件的state和props.html#示例" class="sidebar-link">示例</a></li><li class="sidebar-sub-header"><a href="/learn-typescript/foo/React/React组件的state和props.html#每日一题" class="sidebar-link">每日一题</a></li><li class="sidebar-sub-header"><a href="/learn-typescript/foo/React/React组件的state和props.html#参考" class="sidebar-link">参考</a></li></ul></li><li><a href="/learn-typescript/foo/React/React虚拟DOM的理解.html" class="sidebar-link">React虚拟DOM的理解</a></li><li><a href="/learn-typescript/foo/React/setState同步异步场景.html" class="sidebar-link">setState同步异步场景</a></li><li><a href="/learn-typescript/foo/React/useEffect与useLayoutEffect.html" class="sidebar-link">useEffect与useLayoutEffect</a></li><li><a href="/learn-typescript/foo/React/useMemo与useCallback.html" class="sidebar-link">useMemo与useCallback</a></li><li><a href="/learn-typescript/foo/React/受控组件和非受控组件.html" class="sidebar-link">受控组件和非受控组件</a></li><li><a href="/learn-typescript/foo/React/手写useState与useEffect.html" class="sidebar-link">手写useState与useEffect</a></li><li><a href="/learn-typescript/foo/React/有状态和无状态组件.html" class="sidebar-link">有状态和无状态组件</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Vue学习路线</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="react组件的state和props"><a href="#react组件的state和props" class="header-anchor">#</a> React组件的state和props</h1> <p><code>React</code>的数据是自顶向下单向流动的，即从父组件到子组件中，组件的数据存储在<code>props</code>和<code>state</code>中。实际上在任何应用中，数据都是必不可少的，我们需要直接的改变页面上一块的区域来使得视图的刷新，或者间接地改变其他地方的数据，在<code>React</code>中就使用<code>props</code>和<code>state</code>两个属性存储数据。</p> <h2 id="描述"><a href="#描述" class="header-anchor">#</a> 描述</h2> <p><code>state</code>的主要作用是用于组件保存、控制、修改自己的可变状态。<code>state</code>在组件内部初始化，可以被组件自身修改，而外部不能访问也不能修改，可以认为<code>state</code>是一个局部的、只能被组件自身控制的数据源，<code>state</code>中状态可以通过<code>this.setState</code>方法进行更新，<code>setState</code>会导致组件的重新渲染。<br> <code>props</code>的主要作用是让使用该组件的父组件可以传入参数来配置该组件，它是外部传进来的配置参数，组件内部无法控制也无法修改，除非外部组件主动传入新的<code>props</code>，否则组件的<code>props</code>永远保持不变。<br> <code>state</code>和<code>props</code>都可以决定组件的行为和显示形态，一个组件的<code>state</code>中的数据可以通过<code>props</code>传给子组件，一个组件可以使用外部传入的<code>props</code>来初始化自己的<code>state</code>，但是它们的职责其实非常明晰分明，<code>state</code>是让组件控制自己的状态，<code>props</code>是让外部对组件自己进行配置。简单来说<code>props</code>是传递给组件的(类似于函数的形参)，而<code>state</code>是在组件内被组件自己管理的(类似于在一个函数内声明的变量)。<br>
+一个清晰的原则是尽量少地用<code>state</code>，尽量多地用<code>props</code>，没有<code>state</code>的组件叫无状态组件<code>stateless component</code>，设置了<code>state</code>的叫做有状态组件<code>stateful component</code>。因为状态会带来管理的复杂性，我们尽量多地写无状态组件，尽量少地写有状态的组件，这样会降低代码维护的难度，也会在一定程度上增强组件的可复用性。</p> <h2 id="props"><a href="#props" class="header-anchor">#</a> props</h2> <p><code>React</code>的核心思想就是组件化思想，页面会被切分成一些独立的、可复用的组件。组件从概念上看就是一个函数，可以接受一个参数作为输入值，这个参数就是<code>props</code>，所以可以把<code>props</code>理解为从外部传入组件内部的数据，由于<code>React</code>是单向数据流，所以<code>props</code>基本上也就是从服父级组件向子组件传递的数据。<br>
+假设我们现在需要实现一个列表，我们把列表中的行当做一个组件，也就是有这样两个组件<code>&lt;ItemList/&gt;</code>和<code>&lt;Item/&gt;</code>。列表<code>ItemList</code>组件的数据我们就暂时先假设是放在一个<code>data</code>变量中，然后通过<code>map</code>函数返回一个每一项都是<code>&lt;Item item={数据}/&gt;</code>的数组，也就是说这里其实包含了<code>data.length</code>个<code>&lt;Item/&gt;</code>组件，数据通过在组件上自定义一个参数传递。之后在<code>Item</code>组件内部是使用<code>this.props</code>来获取传递到该组件的所有数据，它是一个对象其中包含了所有对这个组件的配置，现在只包含了一个<code>item</code>属性，所以通过<code>this.props.item</code>来获取即可。</p> <div class="language- extra-class"><pre class="language-text"><code>// Item组件
+class Item extends React.Component{
+  render(){
+    return (
+      &lt;li&gt;{this.props.item}&lt;/li&gt;
+    )
+  }
+}
+
+// ItemList组件
+class ItemList extends React.Component{
+  render(){
+    const data = [1, 2, 3, 4, 5, 6];
+    const itemList = data.map((v, i) =&gt; &lt;Item item={v} key={i}/&gt;);
+    return (
+      &lt;ul&gt;{itemList}&lt;/ul&gt;
+    )
+  }
+}
+</code></pre></div><p><code>props</code>经常被用作渲染组件和初始化状态，当一个组件被实例化之后，它的<code>props</code>是只读的，不可改变的。如果<code>props</code>在渲染过程中可以被改变，会导致这个组件显示的形态变得不可预测，只有通过父组件重新渲染的方式才可以把新的<code>props</code>传入组件中。也就是说<code>props</code>是一个从外部传进组件的参数，主要作为就是从父组件向子组件传递数据，它具有可读性和不变性，只能通过外部组件主动传入新的<code>props</code>来重新渲染子组件，否则子组件的<code>props</code>以及展现形式不会改变。<br>
+在组件中，我们也可以为<code>props</code>中的参数设置一个<code>defaultProps</code>，并且制定它的类型。</p> <div class="language- extra-class"><pre class="language-text"><code>import PropTypes from &quot;prop-types&quot;;
+
+class Hello extends React.Component{
+  constructor(props){
+    super(props);
+  }
+  render() {
+    return (
+      &lt;div&gt;{this.props.tips}&lt;/div&gt;
+    );
+  }
+}
+
+Hello.propTypes = {
+  tips: PropTypes.string
+};
+</code></pre></div><p>不同的验证器类型如下。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">import</span> PropTypes <span class="token keyword">from</span> <span class="token string">&quot;prop-types&quot;</span><span class="token punctuation">;</span>
+
+MyComponent<span class="token punctuation">.</span>propTypes <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">// JS原始类型，这些全部默认是可选的</span>
+  <span class="token literal-property property">optionalArray</span><span class="token operator">:</span> PropTypes<span class="token punctuation">.</span>array<span class="token punctuation">,</span>
+  <span class="token literal-property property">optionalBool</span><span class="token operator">:</span> PropTypes<span class="token punctuation">.</span>bool<span class="token punctuation">,</span>
+  <span class="token literal-property property">optionalFunc</span><span class="token operator">:</span> PropTypes<span class="token punctuation">.</span>func<span class="token punctuation">,</span>
+  <span class="token literal-property property">optionalNumber</span><span class="token operator">:</span> PropTypes<span class="token punctuation">.</span>number<span class="token punctuation">,</span>
+  <span class="token literal-property property">optionalObject</span><span class="token operator">:</span> PropTypes<span class="token punctuation">.</span>object<span class="token punctuation">,</span>
+  <span class="token literal-property property">optionalString</span><span class="token operator">:</span> PropTypes<span class="token punctuation">.</span>string<span class="token punctuation">,</span>
+  <span class="token literal-property property">optionalSymbol</span><span class="token operator">:</span> PropTypes<span class="token punctuation">.</span>symbol<span class="token punctuation">,</span>
+
+  <span class="token comment">// 可以直接渲染的任何东西，可以是数字、字符串、元素或数组</span>
+  <span class="token literal-property property">optionalNode</span><span class="token operator">:</span> PropTypes<span class="token punctuation">.</span>node<span class="token punctuation">,</span>
+
+  <span class="token comment">// React元素</span>
+  <span class="token literal-property property">optionalElement</span><span class="token operator">:</span> PropTypes<span class="token punctuation">.</span>element<span class="token punctuation">,</span>
+
+  <span class="token comment">// 指定是某个类的实例</span>
+  <span class="token literal-property property">optionalMessage</span><span class="token operator">:</span> PropTypes<span class="token punctuation">.</span><span class="token function">instanceOf</span><span class="token punctuation">(</span>Message<span class="token punctuation">)</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// 可以是多个值中的一个</span>
+  <span class="token literal-property property">optionalEnum</span><span class="token operator">:</span> PropTypes<span class="token punctuation">.</span><span class="token function">oneOf</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">&quot;News&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Photos&quot;</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// 可以是多种类型中的一个</span>
+  <span class="token literal-property property">optionalUnion</span><span class="token operator">:</span> PropTypes<span class="token punctuation">.</span><span class="token function">oneOfType</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+    PropTypes<span class="token punctuation">.</span>string<span class="token punctuation">,</span>
+    PropTypes<span class="token punctuation">.</span>number<span class="token punctuation">,</span>
+    PropTypes<span class="token punctuation">.</span><span class="token function">instanceOf</span><span class="token punctuation">(</span>Message<span class="token punctuation">)</span>
+  <span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// 只能是某种类型的数组</span>
+  <span class="token literal-property property">optionalArrayOf</span><span class="token operator">:</span> PropTypes<span class="token punctuation">.</span><span class="token function">arrayOf</span><span class="token punctuation">(</span>PropTypes<span class="token punctuation">.</span>number<span class="token punctuation">)</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// 具有特定类型属性值的对象</span>
+  <span class="token literal-property property">optionalObjectOf</span><span class="token operator">:</span> PropTypes<span class="token punctuation">.</span><span class="token function">objectOf</span><span class="token punctuation">(</span>PropTypes<span class="token punctuation">.</span>number<span class="token punctuation">)</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// 具有相同属性值的对象</span>
+  <span class="token literal-property property">optionalObjectWithShape</span><span class="token operator">:</span> PropTypes<span class="token punctuation">.</span><span class="token function">shape</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token literal-property property">color</span><span class="token operator">:</span> PropTypes<span class="token punctuation">.</span>string<span class="token punctuation">,</span>
+    <span class="token literal-property property">fontSize</span><span class="token operator">:</span> PropTypes<span class="token punctuation">.</span>number
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// 必选条件，可以配合其他验证器，以确保在没有提供属性的情况下发出警告</span>
+  <span class="token literal-property property">requiredFunc</span><span class="token operator">:</span> PropTypes<span class="token punctuation">.</span>func<span class="token punctuation">.</span>isRequired<span class="token punctuation">,</span>
+
+  <span class="token comment">// 必选条件，提供的属性可以为任意类型</span>
+  <span class="token literal-property property">requiredAny</span><span class="token operator">:</span> PropTypes<span class="token punctuation">.</span>any<span class="token punctuation">.</span>isRequired<span class="token punctuation">,</span>
+
+  <span class="token comment">// 自定义 oneOfType 验证器。如果提供的属性值不匹配的它应该抛出一个异常</span>
+  <span class="token comment">// 注意：不能使用 console.warn 和 throw</span>
+  <span class="token function-variable function">customProp</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">props<span class="token punctuation">,</span> propName<span class="token punctuation">,</span> componentName</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">matcher</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>props<span class="token punctuation">[</span>propName<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">&quot;Not Match&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// 自定义 arrayOf 或者 objectOf 验证器。</span>
+  <span class="token comment">// 它会调用每个数组或者对象的key，参数前两个是对象它本身和当前key</span>
+  <span class="token comment">// 注意：不能使用 console.warn  和 throw</span>
+  <span class="token literal-property property">customArrayProp</span><span class="token operator">:</span> PropTypes<span class="token punctuation">.</span><span class="token function">arrayOf</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">propValue<span class="token punctuation">,</span> key<span class="token punctuation">,</span> componentName<span class="token punctuation">,</span> location<span class="token punctuation">,</span> propFullName</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">matcher</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>propValue<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">&quot;Not Match&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="state"><a href="#state" class="header-anchor">#</a> state</h2> <p>一个组件的显示形态可以由数据状态和外部参数所决定，外部参数也就是<code>props</code>，而数据状态就是<code>state</code>。<code>state</code>的主要作用是用于组件保存、控制以及修改自己的状态，它只能在<code>constructor</code>中初始化，它算是组件的私有属性，不可通过外部访问和修改，只能通过组件内部的<code>this.setState</code>来修改，修改<code>state</code>属性会导致组件的重新渲染。简单来说就是在组件初始化的时候，通过<code>this.state</code>给组件设定一个初始的<code>state</code>，在第一次<code>render</code>的时候就会用这个数据来渲染组件。</p> <div class="language- extra-class"><pre class="language-text"><code>class Hello extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = { 
+      tips: &quot;Hello World!&quot;
+    }
+  }
+  render() {
+    return (
+      &lt;div&gt;{this.state.tips}&lt;/div&gt;
+    );
+  }
+}
+</code></pre></div><p><code>state</code>不同于<code>props</code>的一点是，<code>state</code>是可以被改变的。不过不可以直接通过<code>this.state= values;</code>的方式来修改，而需要通过<code>this.setState()</code>方法来修改<code>state</code>。例如我们经常会通过异步操作来获取数据，我们需要在<code>didMount</code>生命周期阶段来执行异步操作。</p> <div class="language- extra-class"><pre class="language-text"><code>componentDidMount(){
+  fetch(&quot;url&quot;)
+    .then(response =&gt; response.json())
+    .then((data) =&gt; {
+      this.setState({itemList:item});  
+    }
+}
+</code></pre></div><p>当我们调用<code>this.setState</code>方法时，<code>React</code>会更新组件的数据状态<code>state</code>，并且重新调用<code>render</code>方法，也就是会对组件进行重新渲染。<code>setState</code>接受一个对象或者函数作为第一个参数，只需要传入需要更新的部分即可，<code>setState</code>还可以接受第二个参数，它是一个函数，会在<code>setState</code>调用完成并且组件开始重新渲染时被调用，可以用来监听渲染完成。</p> <div class="language- extra-class"><pre class="language-text"><code>this.setState({ tips: &quot;data update&quot; });
+this.setState({ tips: &quot;data update&quot; }, () =&gt; console.log(&quot;finished&quot;));
+</code></pre></div><h2 id="示例"><a href="#示例" class="header-anchor">#</a> 示例</h2> <div class="language- extra-class"><pre class="language-text"><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot; /&gt;
+    &lt;title&gt;React&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div id=&quot;root&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;script src=&quot;https://unpkg.com/react@17/umd/react.development.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://unpkg.com/react-dom@17/umd/react-dom.development.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://unpkg.com/@babel/standalone/babel.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/babel&quot;&gt;
+  class Item extends React.Component{
+    render(){
+      return (
+        &lt;li&gt;{this.props.item}&lt;/li&gt;
+      )
+    }
+  }
+
+  class ItemList extends React.Component{
+      render(){
+        const data = [1, 2, 3, 4, 5, 6];
+        const itemList = data.map((v, i) =&gt; &lt;Item item={v} key={i}/&gt;);
+        return (
+          &lt;ul&gt;{itemList}&lt;/ul&gt;
+      )
+    }
+  }
+
+  class Hello extends React.Component{
+    constructor(props){
+      super(props);
+      this.state = { 
+        tips: &quot;Hello World!&quot;
+      }
+    }
+    render() {
+      return (
+        &lt;div&gt;{this.state.tips}&lt;/div&gt;
+      );
+    }
+  }
+
+  class App extends React.Component{
+    render() {
+      return (
+        &lt;div&gt;
+            &lt;Hello /&gt;
+            &lt;ItemList /&gt;
+        &lt;/div&gt;
+      );
+    }
+  }
+
+  var vm = ReactDOM.render(
+    &lt;App /&gt;,
+    document.getElementById(&quot;root&quot;)
+  );
+&lt;/script&gt;
+
+&lt;/html&gt;
+</code></pre></div><h2 id="每日一题"><a href="#每日一题" class="header-anchor">#</a> 每日一题</h2> <div class="language- extra-class"><pre class="language-text"><code>https://github.com/WindrunnerMax/EveryDay
+</code></pre></div><h2 id="参考"><a href="#参考" class="header-anchor">#</a> 参考</h2> <div class="language- extra-class"><pre class="language-text"><code>https://github.com/axuebin/react-blog/issues/8
+https://zh-hans.reactjs.org/docs/faq-state.html
+http://huziketang.mangojuice.top/books/react/lesson12
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/learn-typescript/foo/React/React组件复用的方式.html" class="prev">
+        React组件复用的方式
+      </a></span> <span class="next"><a href="/learn-typescript/foo/React/React虚拟DOM的理解.html">
+        React虚拟DOM的理解
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/learn-typescript/assets/js/app.65022c4a.js" defer></script><script src="/learn-typescript/assets/js/2.f12ff90a.js" defer></script><script src="/learn-typescript/assets/js/97.221bb1c2.js" defer></script>
+  </body>
+</html>

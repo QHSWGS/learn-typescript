@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Mobx与Redux的异同 | 龙鱼混杂</title>
+    <meta name="generator" content="VuePress 1.9.9">
+    <link rel="icon" href="/learn-typescript/img.png">
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/learn-typescript/assets/css/0.styles.22ff2271.css" as="style"><link rel="preload" href="/learn-typescript/assets/js/app.65022c4a.js" as="script"><link rel="preload" href="/learn-typescript/assets/js/2.f12ff90a.js" as="script"><link rel="preload" href="/learn-typescript/assets/js/86.aeef5060.js" as="script"><link rel="prefetch" href="/learn-typescript/assets/js/10.1443b77e.js"><link rel="prefetch" href="/learn-typescript/assets/js/100.78bc1a68.js"><link rel="prefetch" href="/learn-typescript/assets/js/101.57d4d464.js"><link rel="prefetch" href="/learn-typescript/assets/js/102.ee5c1b09.js"><link rel="prefetch" href="/learn-typescript/assets/js/103.644f5975.js"><link rel="prefetch" href="/learn-typescript/assets/js/104.4c94cea4.js"><link rel="prefetch" href="/learn-typescript/assets/js/105.1de5ecbf.js"><link rel="prefetch" href="/learn-typescript/assets/js/106.2fb80939.js"><link rel="prefetch" href="/learn-typescript/assets/js/107.c577558a.js"><link rel="prefetch" href="/learn-typescript/assets/js/108.0e962f1c.js"><link rel="prefetch" href="/learn-typescript/assets/js/109.f1c3e189.js"><link rel="prefetch" href="/learn-typescript/assets/js/11.b2f5d3c5.js"><link rel="prefetch" href="/learn-typescript/assets/js/110.f4913f61.js"><link rel="prefetch" href="/learn-typescript/assets/js/111.82a06cc6.js"><link rel="prefetch" href="/learn-typescript/assets/js/112.273febfb.js"><link rel="prefetch" href="/learn-typescript/assets/js/113.449069f5.js"><link rel="prefetch" href="/learn-typescript/assets/js/114.f4ff0187.js"><link rel="prefetch" href="/learn-typescript/assets/js/115.eccb3fbb.js"><link rel="prefetch" href="/learn-typescript/assets/js/116.de5c81b0.js"><link rel="prefetch" href="/learn-typescript/assets/js/117.a0441188.js"><link rel="prefetch" href="/learn-typescript/assets/js/118.2fb3a65b.js"><link rel="prefetch" href="/learn-typescript/assets/js/119.7e16bcc2.js"><link rel="prefetch" href="/learn-typescript/assets/js/12.959010c8.js"><link rel="prefetch" href="/learn-typescript/assets/js/120.2efb4f4b.js"><link rel="prefetch" href="/learn-typescript/assets/js/121.bafd4fc5.js"><link rel="prefetch" href="/learn-typescript/assets/js/122.e1b560eb.js"><link rel="prefetch" href="/learn-typescript/assets/js/123.74a8b8de.js"><link rel="prefetch" href="/learn-typescript/assets/js/124.82ae6c9d.js"><link rel="prefetch" href="/learn-typescript/assets/js/125.aa24a87d.js"><link rel="prefetch" href="/learn-typescript/assets/js/126.bf201686.js"><link rel="prefetch" href="/learn-typescript/assets/js/127.ae43a7f2.js"><link rel="prefetch" href="/learn-typescript/assets/js/128.d7c509b1.js"><link rel="prefetch" href="/learn-typescript/assets/js/129.d5092f04.js"><link rel="prefetch" href="/learn-typescript/assets/js/13.f6c76511.js"><link rel="prefetch" href="/learn-typescript/assets/js/130.fe01c2b4.js"><link rel="prefetch" href="/learn-typescript/assets/js/131.8038826f.js"><link rel="prefetch" href="/learn-typescript/assets/js/132.191eb80b.js"><link rel="prefetch" href="/learn-typescript/assets/js/133.83014ee0.js"><link rel="prefetch" href="/learn-typescript/assets/js/134.a54d8873.js"><link rel="prefetch" href="/learn-typescript/assets/js/135.d98ac3be.js"><link rel="prefetch" href="/learn-typescript/assets/js/136.ddfe591f.js"><link rel="prefetch" href="/learn-typescript/assets/js/137.593203f0.js"><link rel="prefetch" href="/learn-typescript/assets/js/138.ffc88360.js"><link rel="prefetch" href="/learn-typescript/assets/js/139.4a9969f8.js"><link rel="prefetch" href="/learn-typescript/assets/js/14.863785df.js"><link rel="prefetch" href="/learn-typescript/assets/js/140.02580eb9.js"><link rel="prefetch" href="/learn-typescript/assets/js/141.4512eb76.js"><link rel="prefetch" href="/learn-typescript/assets/js/142.7115e9e0.js"><link rel="prefetch" href="/learn-typescript/assets/js/143.1c91a682.js"><link rel="prefetch" href="/learn-typescript/assets/js/144.cf47c701.js"><link rel="prefetch" href="/learn-typescript/assets/js/145.28348dd4.js"><link rel="prefetch" href="/learn-typescript/assets/js/146.4188d32a.js"><link rel="prefetch" href="/learn-typescript/assets/js/147.88cfb333.js"><link rel="prefetch" href="/learn-typescript/assets/js/148.e2562fef.js"><link rel="prefetch" href="/learn-typescript/assets/js/149.17b1abaf.js"><link rel="prefetch" href="/learn-typescript/assets/js/15.6c8fcdd8.js"><link rel="prefetch" href="/learn-typescript/assets/js/150.ac375cb0.js"><link rel="prefetch" href="/learn-typescript/assets/js/151.c6131fa7.js"><link rel="prefetch" href="/learn-typescript/assets/js/152.655702ac.js"><link rel="prefetch" href="/learn-typescript/assets/js/153.b3a80b0a.js"><link rel="prefetch" href="/learn-typescript/assets/js/154.edd1bd03.js"><link rel="prefetch" href="/learn-typescript/assets/js/155.92d13ada.js"><link rel="prefetch" href="/learn-typescript/assets/js/156.189e74c9.js"><link rel="prefetch" href="/learn-typescript/assets/js/157.6429ec60.js"><link rel="prefetch" href="/learn-typescript/assets/js/158.59930e8a.js"><link rel="prefetch" href="/learn-typescript/assets/js/159.f7a46fd3.js"><link rel="prefetch" href="/learn-typescript/assets/js/16.a9935b58.js"><link rel="prefetch" href="/learn-typescript/assets/js/160.0689d2e4.js"><link rel="prefetch" href="/learn-typescript/assets/js/161.b30318c6.js"><link rel="prefetch" href="/learn-typescript/assets/js/162.6a9c9cc8.js"><link rel="prefetch" href="/learn-typescript/assets/js/17.24e9eb48.js"><link rel="prefetch" href="/learn-typescript/assets/js/18.b026b4d5.js"><link rel="prefetch" href="/learn-typescript/assets/js/19.146d253b.js"><link rel="prefetch" href="/learn-typescript/assets/js/20.7c8636e0.js"><link rel="prefetch" href="/learn-typescript/assets/js/21.b5356d48.js"><link rel="prefetch" href="/learn-typescript/assets/js/22.5bced95a.js"><link rel="prefetch" href="/learn-typescript/assets/js/23.59ed8be7.js"><link rel="prefetch" href="/learn-typescript/assets/js/24.484bc0d4.js"><link rel="prefetch" href="/learn-typescript/assets/js/25.c3fc519c.js"><link rel="prefetch" href="/learn-typescript/assets/js/26.21c4e94d.js"><link rel="prefetch" href="/learn-typescript/assets/js/27.9d936a9a.js"><link rel="prefetch" href="/learn-typescript/assets/js/28.b9b85e09.js"><link rel="prefetch" href="/learn-typescript/assets/js/29.414c6a86.js"><link rel="prefetch" href="/learn-typescript/assets/js/3.482a9e45.js"><link rel="prefetch" href="/learn-typescript/assets/js/30.cacfba7a.js"><link rel="prefetch" href="/learn-typescript/assets/js/31.db4c34dd.js"><link rel="prefetch" href="/learn-typescript/assets/js/32.f8f1bd48.js"><link rel="prefetch" href="/learn-typescript/assets/js/33.809aef7d.js"><link rel="prefetch" href="/learn-typescript/assets/js/34.b1aee38f.js"><link rel="prefetch" href="/learn-typescript/assets/js/35.711e99c8.js"><link rel="prefetch" href="/learn-typescript/assets/js/36.6aad95b5.js"><link rel="prefetch" href="/learn-typescript/assets/js/37.4463d2a5.js"><link rel="prefetch" href="/learn-typescript/assets/js/38.a1eca688.js"><link rel="prefetch" href="/learn-typescript/assets/js/39.48481131.js"><link rel="prefetch" href="/learn-typescript/assets/js/4.1b397dc3.js"><link rel="prefetch" href="/learn-typescript/assets/js/40.e4675b9f.js"><link rel="prefetch" href="/learn-typescript/assets/js/41.c0e73777.js"><link rel="prefetch" href="/learn-typescript/assets/js/42.833e8ef6.js"><link rel="prefetch" href="/learn-typescript/assets/js/43.0e33103b.js"><link rel="prefetch" href="/learn-typescript/assets/js/44.c683d78f.js"><link rel="prefetch" href="/learn-typescript/assets/js/45.103bfef5.js"><link rel="prefetch" href="/learn-typescript/assets/js/46.433c31f1.js"><link rel="prefetch" href="/learn-typescript/assets/js/47.1afe7f2c.js"><link rel="prefetch" href="/learn-typescript/assets/js/48.5d1520cc.js"><link rel="prefetch" href="/learn-typescript/assets/js/49.c438df64.js"><link rel="prefetch" href="/learn-typescript/assets/js/5.1a61208d.js"><link rel="prefetch" href="/learn-typescript/assets/js/50.766040f1.js"><link rel="prefetch" href="/learn-typescript/assets/js/51.563be823.js"><link rel="prefetch" href="/learn-typescript/assets/js/52.0b752717.js"><link rel="prefetch" href="/learn-typescript/assets/js/53.52335597.js"><link rel="prefetch" href="/learn-typescript/assets/js/54.e9d6261c.js"><link rel="prefetch" href="/learn-typescript/assets/js/55.38017fd1.js"><link rel="prefetch" href="/learn-typescript/assets/js/56.8eb374a4.js"><link rel="prefetch" href="/learn-typescript/assets/js/57.edda2a5f.js"><link rel="prefetch" href="/learn-typescript/assets/js/58.b1987896.js"><link rel="prefetch" href="/learn-typescript/assets/js/59.593eddd4.js"><link rel="prefetch" href="/learn-typescript/assets/js/6.0c507dec.js"><link rel="prefetch" href="/learn-typescript/assets/js/60.6b2adb80.js"><link rel="prefetch" href="/learn-typescript/assets/js/61.40b621a4.js"><link rel="prefetch" href="/learn-typescript/assets/js/62.4be7ed21.js"><link rel="prefetch" href="/learn-typescript/assets/js/63.b0089571.js"><link rel="prefetch" href="/learn-typescript/assets/js/64.a540cfb8.js"><link rel="prefetch" href="/learn-typescript/assets/js/65.78191260.js"><link rel="prefetch" href="/learn-typescript/assets/js/66.841abcfb.js"><link rel="prefetch" href="/learn-typescript/assets/js/67.aafdd85d.js"><link rel="prefetch" href="/learn-typescript/assets/js/68.3fe54ee8.js"><link rel="prefetch" href="/learn-typescript/assets/js/69.2ac4f4fd.js"><link rel="prefetch" href="/learn-typescript/assets/js/7.f8393b73.js"><link rel="prefetch" href="/learn-typescript/assets/js/70.1bff0658.js"><link rel="prefetch" href="/learn-typescript/assets/js/71.1259caae.js"><link rel="prefetch" href="/learn-typescript/assets/js/72.00cdf2f8.js"><link rel="prefetch" href="/learn-typescript/assets/js/73.04d8702a.js"><link rel="prefetch" href="/learn-typescript/assets/js/74.7af51070.js"><link rel="prefetch" href="/learn-typescript/assets/js/75.20025077.js"><link rel="prefetch" href="/learn-typescript/assets/js/76.baab8231.js"><link rel="prefetch" href="/learn-typescript/assets/js/77.68adaf17.js"><link rel="prefetch" href="/learn-typescript/assets/js/78.57ae309f.js"><link rel="prefetch" href="/learn-typescript/assets/js/79.6d8be3ab.js"><link rel="prefetch" href="/learn-typescript/assets/js/8.dd818469.js"><link rel="prefetch" href="/learn-typescript/assets/js/80.f3c0dfb2.js"><link rel="prefetch" href="/learn-typescript/assets/js/81.3aadf904.js"><link rel="prefetch" href="/learn-typescript/assets/js/82.0565f5d0.js"><link rel="prefetch" href="/learn-typescript/assets/js/83.826ba207.js"><link rel="prefetch" href="/learn-typescript/assets/js/84.e831c7c7.js"><link rel="prefetch" href="/learn-typescript/assets/js/85.599e29ff.js"><link rel="prefetch" href="/learn-typescript/assets/js/87.ee133bc0.js"><link rel="prefetch" href="/learn-typescript/assets/js/88.b1ce3b46.js"><link rel="prefetch" href="/learn-typescript/assets/js/89.d653c693.js"><link rel="prefetch" href="/learn-typescript/assets/js/9.a596d56d.js"><link rel="prefetch" href="/learn-typescript/assets/js/90.69c3db7a.js"><link rel="prefetch" href="/learn-typescript/assets/js/91.de26b2ee.js"><link rel="prefetch" href="/learn-typescript/assets/js/92.65681e8e.js"><link rel="prefetch" href="/learn-typescript/assets/js/93.6f8f5f23.js"><link rel="prefetch" href="/learn-typescript/assets/js/94.49bbf7de.js"><link rel="prefetch" href="/learn-typescript/assets/js/95.2db610ef.js"><link rel="prefetch" href="/learn-typescript/assets/js/96.ba63d16a.js"><link rel="prefetch" href="/learn-typescript/assets/js/97.221bb1c2.js"><link rel="prefetch" href="/learn-typescript/assets/js/98.43a0b8c0.js"><link rel="prefetch" href="/learn-typescript/assets/js/99.57b3d0a6.js">
+    <link rel="stylesheet" href="/learn-typescript/assets/css/0.styles.22ff2271.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/learn-typescript/" class="home-link router-link-active"><img src="https://www.logosc.cn//oss/icons/2022/09/03/9aab9c697d7125d64f828eba5b4e16c5.svg" alt="龙鱼混杂" class="logo"> <span class="site-name can-hide">龙鱼混杂</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/learn-typescript/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/learn-typescript/foo/" class="nav-link router-link-active">
+  学习路线
+</a></div><div class="nav-item"><a href="https://github.com/QHSWGS" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/learn-typescript/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/learn-typescript/foo/" class="nav-link router-link-active">
+  学习路线
+</a></div><div class="nav-item"><a href="https://github.com/QHSWGS" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>css学习路线</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>JavaScript学习路线</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>React学习路线</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/learn-typescript/foo/React/Context与Reducer.html" class="sidebar-link">Context与Reducer</a></li><li><a href="/learn-typescript/foo/React/Hooks与事件绑定.html" class="sidebar-link">Hooks与事件绑定</a></li><li><a href="/learn-typescript/foo/React/Hooks与普通函数的区别.html" class="sidebar-link">Hooks与普通函数的区别</a></li><li><a href="/learn-typescript/foo/React/Hooks中的useState.html" class="sidebar-link">Hooks中的useState</a></li><li><a href="/learn-typescript/foo/React/Mobx与Redux的异同.html" class="active sidebar-link">Mobx与Redux的异同</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/learn-typescript/foo/React/Mobx与Redux的异同.html#描述" class="sidebar-link">描述</a></li><li class="sidebar-sub-header"><a href="/learn-typescript/foo/React/Mobx与Redux的异同.html#相同点" class="sidebar-link">相同点</a></li><li class="sidebar-sub-header"><a href="/learn-typescript/foo/React/Mobx与Redux的异同.html#不同点" class="sidebar-link">不同点</a></li><li class="sidebar-sub-header"><a href="/learn-typescript/foo/React/Mobx与Redux的异同.html#最后" class="sidebar-link">最后</a></li><li class="sidebar-sub-header"><a href="/learn-typescript/foo/React/Mobx与Redux的异同.html#每日一题" class="sidebar-link">每日一题</a></li><li class="sidebar-sub-header"><a href="/learn-typescript/foo/React/Mobx与Redux的异同.html#参考" class="sidebar-link">参考</a></li></ul></li><li><a href="/learn-typescript/foo/React/ReactRouter的实现.html" class="sidebar-link">ReactRouter的实现</a></li><li><a href="/learn-typescript/foo/React/React中diff算法的理解.html" class="sidebar-link">React中diff算法的理解</a></li><li><a href="/learn-typescript/foo/React/React中JSX的理解.html" class="sidebar-link">React中JSX的理解</a></li><li><a href="/learn-typescript/foo/React/React中refs的理解.html" class="sidebar-link">React中refs的理解</a></li><li><a href="/learn-typescript/foo/React/React中的合成事件.html" class="sidebar-link">React中的合成事件</a></li><li><a href="/learn-typescript/foo/React/React中的纯组件.html" class="sidebar-link">React中的纯组件</a></li><li><a href="/learn-typescript/foo/React/React中的高阶组件.html" class="sidebar-link">React中的高阶组件</a></li><li><a href="/learn-typescript/foo/React/React中组件间通信的方式.html" class="sidebar-link">React中组件间通信的方式</a></li><li><a href="/learn-typescript/foo/React/React生命周期.html" class="sidebar-link">React生命周期</a></li><li><a href="/learn-typescript/foo/React/React组件复用的方式.html" class="sidebar-link">React组件复用的方式</a></li><li><a href="/learn-typescript/foo/React/React组件的state和props.html" class="sidebar-link">React组件的state和props</a></li><li><a href="/learn-typescript/foo/React/React虚拟DOM的理解.html" class="sidebar-link">React虚拟DOM的理解</a></li><li><a href="/learn-typescript/foo/React/setState同步异步场景.html" class="sidebar-link">setState同步异步场景</a></li><li><a href="/learn-typescript/foo/React/useEffect与useLayoutEffect.html" class="sidebar-link">useEffect与useLayoutEffect</a></li><li><a href="/learn-typescript/foo/React/useMemo与useCallback.html" class="sidebar-link">useMemo与useCallback</a></li><li><a href="/learn-typescript/foo/React/受控组件和非受控组件.html" class="sidebar-link">受控组件和非受控组件</a></li><li><a href="/learn-typescript/foo/React/手写useState与useEffect.html" class="sidebar-link">手写useState与useEffect</a></li><li><a href="/learn-typescript/foo/React/有状态和无状态组件.html" class="sidebar-link">有状态和无状态组件</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Vue学习路线</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="mobx与redux的异同"><a href="#mobx与redux的异同" class="header-anchor">#</a> Mobx与Redux的异同</h1> <p><code>Mobx</code>与<code>Redux</code>都是用来管理<code>JavaScript</code>应用的状态的解决方案，用以提供在某个地方保存状态、修改状态和更新状态，使我们的应用在状态与组件上解耦，我们可以从一个地方获得状态，在另一个地方修改，在其他地方得到他们更新后的状态。他们都遵循单一数据源的原则，这让我们更容易推断状态的值和状态的修改。当然他们并不一定要跟<code>React</code>绑定在一起，它们也可以在<code>AngularJs</code>和<code>VueJs</code>这些框架库里使用。</p> <h2 id="描述"><a href="#描述" class="header-anchor">#</a> 描述</h2> <p><code>Redux</code>作者说过，如果你不知道是否需要<code>Redux</code>，那就是不需要。在判断是否需要使用<code>Mobx</code>与<code>Redux</code>之前，我们首先需要知道他们究竟是要解决什么问题，以及当前是否遇到了这个问题。如今前端通常是要用组件<code>components</code>来构建一个应用，而组件中通常有自己的内部状态即<code>state</code>，但是随着应用越来越膨胀，组件自己内部维护的状态在膨胀的应用中很快会变得混乱。随着应用功能的不断拓展，通常会出现一些问题:</p> <ul><li>一个组件通常需要和另一个组件共享状态。</li> <li>一个组件需要改变另一个组件的状态。</li> <li>组件层级太深，需要共享状态时状态要层层传递。</li> <li>子组件更新一个状态，可能有多个父组件，兄弟组件共用，实现困难。</li></ul> <p>这种情况下继续使用提取状态到父组件的方法你会发现很复杂，而且随着组件增多，嵌套层级加深，这个复杂度也越来越高。因为关联的状态多，传递复杂，很容易出现像某个组件莫名其妙的更新或者不更新的情况，异常排查也会困难重重。也就是说当应用膨胀到一定程度时，推算应用的状态将会变得越来越困难，此时整个应用就会变成一个有很多状态对象并且在组件层级上互相修改状态的混乱应用。在很多情况下，状态对象和状态的修改并没有必要绑定在一些组件上，我们可以尝试将其提升，通过组件树来得到与修改状态。<br>
+目前通常的解决方案是引入状态管理库，比如<code>Mobx</code>或<code>Redux</code>，<code>Mobx</code>与<code>Redux</code>都是用来管理<code>JavaScript</code>应用的状态的解决方案，用以提供在某个地方保存状态、修改状态和更新状态，使我们的应用在状态与组件上解耦，我们可以从一个地方获得状态，在另一个地方修改，在其他地方得到他们更新后的状态。他们都遵循单一数据源的原则，这让我们更容易推断状态的值和状态的修改。当然他们并不一定要跟<code>React</code>绑定在一起，它们也可以在<code>AngularJs</code>和<code>VueJs</code>这些框架库里使用。<br>
+像<code>Redux</code>和<code>Mobx</code>这类状态管理库一般都有附带的工具，例如在<code>React</code>中使用的有<code>react-redux</code>和<code>mobx-react</code>，他们使你的组件能够获得状态，一般情况下，这些组件被叫做容器组件<code>container components</code>，或者说的更加确切的话，就是连接组件<code>connected components</code>。通常只要将组件作为连接组件，就可以在组件层级的任何地方得到和更改状态。<br>
+对于<code>Mobx</code>与<code>Redux</code>的异同这个问题，是我最近在找实习的时候遇到的，分别为<code>react mobx</code>与<code>react redux</code>作简单的示例，文中的示例代码都在<code>https://codesandbox.io/s/react-ts-template-forked-88t6in</code>中。</p> <h3 id="mobx"><a href="#mobx" class="header-anchor">#</a> Mobx</h3> <p><code>MobX</code>是一个经过战火洗礼的库，他通过透明的函数响应式编程<code>transparently applying functional reactive programming - TFRP</code>使得状态管理变得简单和可扩展。<code>MobX</code>背后的哲学很简单: 任何源自应用状态的东西都应该自动地获得，其中包括<code>UI</code>、数据序列化等等，核心重点就是: <code>MobX</code>通过响应式编程实现简单高效，可扩展的状态管理。</p> <div class="language- extra-class"><pre class="language-text"><code>// src/mobx-store/store.ts
+import { observable, action, makeAutoObservable } from &quot;mobx&quot;;
+
+class Store {
+  constructor() {
+    makeAutoObservable(this);
+  }
+
+  @observable
+  state = {
+    count: 1
+  };
+
+  @action
+  setCount = (value: number) =&gt; {
+    this.state.count = value;
+  };
+
+  @action
+  setCountIncrement = () =&gt; {
+    this.state.count++;
+  };
+}
+
+export default new Store();
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>// src/counter-mobx.tsx
+import React from &quot;react&quot;;
+import { observer } from &quot;mobx-react&quot;;
+import store from &quot;./mobx-store/store&quot;;
+
+const CountMobx: React.FC = () =&gt; {
+  return (
+    &lt;div&gt;
+      &lt;div&gt;{store.state.count}&lt;/div&gt;
+      &lt;button onClick={() =&gt; store.setCount(1)}&gt;Set Count value 1&lt;/button&gt;
+      &lt;button onClick={store.setCountIncrement}&gt;Set Count Increment&lt;/button&gt;
+    &lt;/div&gt;
+  );
+};
+
+export default observer(CountMobx);
+</code></pre></div><h3 id="redux"><a href="#redux" class="header-anchor">#</a> Redux</h3> <p><code>Redux</code>用一个单独的常量状态树或者叫作对象保存这一整个应用的状态，这个对象不能直接被改变，当一些数据变化了，一个新的对象就会被创建，严格的单向数据流是<code>Redux</code>架构的设计核心。</p> <div class="language- extra-class"><pre class="language-text"><code>// src/redux-store/store.ts
+import { createStore } from &quot;redux&quot;;
+
+const defaultState: State = {
+  count: 1
+};
+
+export const actions = {
+  SET_COUNT: &quot;SET_COUNT&quot; as const,
+  SET_COUNT_INCREMENT: &quot;SET_COUNT_INCREMENT&quot; as const
+};
+
+const reducer = (state: State = defaultState, action: Actions): State =&gt; {
+  const { type } = action;
+  switch (type) {
+    case actions.SET_COUNT: {
+      return { ...state, count: action.payload };
+    }
+    case actions.SET_COUNT_INCREMENT: {
+      return { ...state, count: state.count + 1 };
+    }
+    default:
+      return state;
+  }
+};
+export const store = createStore(reducer, defaultState);
+
+export interface State {
+  count: number;
+}
+export type RootState = ReturnType&lt;typeof store.getState&gt;;
+export type AppDispatch = typeof store.dispatch;
+
+type SET_COUNT_INCREMENT = {
+  type: typeof actions.SET_COUNT_INCREMENT;
+  payload: void;
+};
+type SET_COUNT = {
+  type: typeof actions.SET_COUNT;
+  payload: number;
+};
+export type Actions = SET_COUNT_INCREMENT | SET_COUNT;
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>// src/counter-redux.tsx
+import React from &quot;react&quot;;
+import { AppDispatch, actions, State } from &quot;./redux-store/store&quot;;
+import { useSelector, useDispatch } from &quot;react-redux&quot;;
+
+const CountRedux: React.FC = () =&gt; {
+  const count = useSelector((state: State) =&gt; state.count);
+  const dispatch = useDispatch() as AppDispatch;
+  return (
+    &lt;div&gt;
+      &lt;div&gt;{count}&lt;/div&gt;
+      &lt;button onClick={() =&gt; dispatch({ type: actions.SET_COUNT, payload: 1 })}&gt;
+        Set Count value 1
+      &lt;/button&gt;
+      &lt;button
+        onClick={() =&gt;
+          dispatch({ type: actions.SET_COUNT_INCREMENT, payload: void 0 })
+        }
+      &gt;
+        Set Count Increment
+      &lt;/button&gt;
+    &lt;/div&gt;
+  );
+};
+
+export default CountRedux;
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>// src/App.tsx
+import React from &quot;react&quot;;
+import &quot;./styles.css&quot;;
+import CountMobx from &quot;./counter-mobx&quot;;
+import CountRedux from &quot;./counter-redux&quot;;
+import { Provider as ReduxProvider } from &quot;react-redux&quot;;
+import { store } from &quot;./redux-store/store&quot;;
+
+const App: React.FC = () =&gt; {
+  return (
+    &lt;div&gt;
+      &lt;div&gt;======Mobx======&lt;/div&gt;
+      &lt;CountMobx /&gt;
+      &lt;br /&gt;
+      &lt;div&gt;======Redux======&lt;/div&gt;
+      &lt;ReduxProvider store={store}&gt;
+        &lt;CountRedux /&gt;
+      &lt;/ReduxProvider&gt;
+    &lt;/div&gt;
+  );
+};
+
+export default App;
+</code></pre></div><h2 id="相同点"><a href="#相同点" class="header-anchor">#</a> 相同点</h2> <ul><li>为了解决状态管理混乱，无法有效的同步的问题，统一管理应用状态。</li> <li>一个状态只有一个可信的数据源，通常是以<code>action</code>的方式提供更新状态的途径。</li> <li>都带有状态与组件的链接管理库，例如<code>react-redux</code>、<code>mobx-react</code>。</li></ul> <h2 id="不同点"><a href="#不同点" class="header-anchor">#</a> 不同点</h2> <h3 id="函数式和面向对象"><a href="#函数式和面向对象" class="header-anchor">#</a> 函数式和面向对象</h3> <ul><li><code>Redux</code>更多的是遵循函数式编程<code>Functional Programming, FP</code>思想，从数据上来说<code>Redux</code>理想的是<code>immutable</code>，<code>immutable</code>对象是不可直接赋值的对象,它可以有效的避免错误赋值的问题，例如<code>reducer</code>就是一个纯函数，对于相同的输入总是输出相同的结果。</li> <li><code>Mobx</code>则更多从面相对象<code>Object Oriented Programming, OOP</code>与响应式编程<code>Reactive Programming</code>角度考虑问题，从数据上说<code>Mobx</code>从始至终都是一份引用，这样可以使的<code>Mobx</code>的组件可以做到精准更新，将状态包装成可观察对象，一旦状态对象变更，就能自动获得更新。</li></ul> <h3 id="store管理方式"><a href="#store管理方式" class="header-anchor">#</a> store管理方式</h3> <ul><li>在<code>Redux</code>应用中通常将整个应用的<code>state</code>被储存在一棵<code>object tree</code>中，并且这个<code>object tree</code>只存在于唯一一个<code>store</code>中。</li> <li>在<code>Mobx</code>则通常按模块将应用状态划分，在多个独立的<code>store</code>中管理。</li></ul> <h3 id="储存数据形式"><a href="#储存数据形式" class="header-anchor">#</a> 储存数据形式</h3> <ul><li><code>Redux</code>默认以<code>JavaScript</code>原生对象形式存储数据，这也就使得<code>Redux</code>需要手动追踪所有状态对象的变更。</li> <li>在<code>Mobx</code>使用可观察对象，通常是使用<code>observable</code>让数据的变化可以被观察，通过把属性转化成<code>getter/setter</code>来实现，当数据变更时将自动触发监听响应。</li></ul> <h3 id="不可变和可变"><a href="#不可变和可变" class="header-anchor">#</a> 不可变和可变</h3> <ul><li><code>Redux</code>状态对象通常是不可变的<code>Immutable</code>，复制代码我们不能直接操作状态对象，而总是在原来状态对象基础上返回一个新的状态对象。</li> <li><code>Mobx</code>状态对象通常是可变的<code>Mutable</code>，可以直接使用新值更新状态对象。</li></ul> <h3 id="状态调试"><a href="#状态调试" class="header-anchor">#</a> 状态调试</h3> <ul><li><code>Redux</code>提供进行时间回溯的开发工具，同时纯函数以及更少的抽象，让调试变得更加容易。</li> <li><code>Mobx</code>中有更多的抽象和封装，调试会相对比较困难，同时结果也相对难以预测。</li></ul> <h2 id="最后"><a href="#最后" class="header-anchor">#</a> 最后</h2> <p><code>Mobx</code>与<code>Redux</code>都是非常棒的两个库，使用上没有对错，只有合适不合适，只是可能需要在使用之前做好调研工作。或许有人需要减少编写的代码行数，那么就可能会提到<code>Redux</code>有太多的样板代码，而应该使用<code>Mobx</code>，可以减少<code>xxx</code>行代码。又或许有人需要更加明确的处理对象的变更，那么就可能感觉放弃<code>Mobx</code>的响应式魔法，而使用<code>Redux</code>去通过纯 <code>JavaScript</code>来推断与调试。又或许两个状态管理库并不冲突，可以同时存在，分别管理不同的模块的状态。</p> <h2 id="每日一题"><a href="#每日一题" class="header-anchor">#</a> 每日一题</h2> <div class="language- extra-class"><pre class="language-text"><code>https://github.com/WindrunnerMax/EveryDay
+</code></pre></div><h2 id="参考"><a href="#参考" class="header-anchor">#</a> 参考</h2> <div class="language- extra-class"><pre class="language-text"><code>https://cn.mobx.js.org/
+https://www.redux.org.cn/docs/react-redux/
+https://juejin.cn/post/6844903977553756168
+https://juejin.cn/post/6924572729886638088
+https://segmentfault.com/a/1190000011148981
+https://www.cnblogs.com/tommymarc/p/15768138.html
+https://blog.csdn.net/leelxp/article/details/108450518
+https://blog.csdn.net/Ed7zgeE9X/article/details/121896197
+https://yangleiup.github.io/accumulate/redux%E4%B8%8Emobx%E5%8C%BA%E5%88%AB.html
+https://medium.com/@pie6k/better-way-to-create-type-safe-redux-actions-and-reducers-with-typescript-45386808c103
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/learn-typescript/foo/React/Hooks中的useState.html" class="prev">
+        Hooks中的useState
+      </a></span> <span class="next"><a href="/learn-typescript/foo/React/ReactRouter的实现.html">
+        ReactRouter的实现
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/learn-typescript/assets/js/app.65022c4a.js" defer></script><script src="/learn-typescript/assets/js/2.f12ff90a.js" defer></script><script src="/learn-typescript/assets/js/86.aeef5060.js" defer></script>
+  </body>
+</html>
